@@ -62,16 +62,10 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Jakob reviews round 3 (`explorations/004_calibrated_ks.py`; [review](reviews/2026-09-24-overflow-repression.md)).
+Jakob reviews round 4 (`explorations/005_state_dependent_uptake.py`; [review](reviews/2026-09-24-overflow-repression.md)).
 
-- The calibrated KS (8–14 g/L) matches the low-affinity transporters.
-- The test is now close at 10–40 g/L. At 1–5 g/L it fails in the opposite direction: the model makes too little ethanol.
-- Including repression makes low sugar worse.
-- The model is over-flexible: 7 parameters are calibrated on one run.
-
-**Agent's recommendation:** stop extending this model on this one dataset. Record what was learned, then decide whether to:
-
-1. find a second dataset with low-sugar time courses, or
-2. move on to the fed-batch question, where low sugar is the central regime and data will be needed anyway.
-
-Do not tune the model to Figure 2.
+- Linking uptake affinity to repression makes the model consistent with the van Hoek chemostat and improves the 5 g/L test.
+- At 1 g/L and in the compiled 8 g/L batch it still under-predicts overflow.
+- **Candidate next step (not agreed):** separate the two states: fast transporter adaptation and slow respiratory derepression.
+- **Alternative:** pause the model and consolidate what step 5 has taught, because the model is growing more flexible with each round.
+- Do not tune the model to the test data.

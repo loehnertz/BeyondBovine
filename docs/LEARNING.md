@@ -214,6 +214,11 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
     - The test fits at 10–40 g/L. At 1–5 g/L the failure flips: the model makes too little ethanol.
     - Repression worsens the low-sugar prediction.
     - Low sugar is the regime fed-batch depends on.
+  - **Round 4 (2026-09-24):**
+    - Jakob chose to solve the low-sugar problem before fed-batch ("we have to solve at low sugar first").
+    - A second dataset (the compilation, chemostat and 8 g/L batch) confirmed strong overflow at low sugar in batch, and high-affinity respiratory growth in chemostats.
+    - Jakob agreed to link affinity to repression (`005`). This improved 5 g/L and fits the chemostat, but not 1 g/L or the 8 g/L batch.
+    - The next hypothesis is two states with different speeds.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.

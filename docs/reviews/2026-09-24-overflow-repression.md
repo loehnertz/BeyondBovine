@@ -109,3 +109,41 @@ At 40 g/L, Ji's cells plus ethanol, plus the unavoidable CO₂ released as ethan
 - **Carry-over from the preculture** of glucose or ethanol, which matters most at low levels.
 
 **Relevance to the project.** Fed-batch deliberately holds glucose low, which is exactly the regime where this model now fails. Low-sugar behaviour is therefore not a side issue for the deferred fed-batch question. It is the main one.
+
+## Round 4: uptake affinity linked to repression, with chemostat data (`explorations/005_state_dependent_uptake.py`)
+
+**Change (agreed with Jakob).** The uptake half-speed point depends on the repression state R. At R = 0 (repressed) it uses the low-affinity value, calibrated. At R = 1 (derepressed) it uses the high-affinity value, KS = 0.27 g/L (Reifenberger 1997). The model is calibrated jointly on Ji's 40 g/L run and the van Hoek 1998 chemostat, which uses an industrial baker's yeast. Tested on Ji Figure 2 and on the compiled 8 g/L batch. Neither test set was fitted.
+
+**New data.** Both files are in `explorations/data/` and come from the MIT-licensed Moreno-Paz et al. 2022 compilation.
+
+- `vanhoek1998_chemostat.csv` was checked against the original abstract.
+- `compiled_batch_8gL.csv` has no identified original source, and it is internally inconsistent early on: 1 g/L ethanol after only 0.5 g/L glucose, which is stoichiometrically impossible. Only its yields at glucose exhaustion are used, and only as a test.
+
+**Calibration.**
+
+- **Chemostat:** reproduced well. The model is fully respiratory up to D ≈ 0.30, against 0.28 in the data, with a sharp ethanol rise above that. It misses the small onset at D = 0.28–0.30.
+- **Ji 40 g/L:** the cells and ethanol fit well. Early glucose consumption lags the data by about 1 h, a compromise with the chemostat.
+- **Low-affinity KS:** 10.7 g/L, which is the Hxt1/3 range again.
+- **Respiration thresholds:** 0.30 g/g/h when repressed and 0.75 g/g/h when derepressed.
+- **Yeast-extract yield:** fell to 0.05, so it now contributes little.
+
+**Test.**
+
+| Starting glucose | 004 (constant + YE) | 005 | Ji |
+|---|---|---|---|
+| 1 | 0.47 / 0.00 | 0.46 / 0.01 | 0.41 / 0.22 |
+| 5 | 0.32 / 0.11 | **0.31 / 0.19** | 0.26 / 0.285 |
+| 10 | 0.24 / 0.27 | **0.25 / 0.27** | 0.24 / 0.31 |
+| 25 | 0.19 / 0.37 | 0.19 / 0.34 | 0.215 / 0.365 |
+
+- **Compiled 8 g/L batch:** the model gives 0.26 / 0.25 and the data give 0.14 / 0.39. The model under-predicts overflow. The result does not depend on whether the cells start repressed or derepressed.
+
+**Reading.**
+
+- **Improvement in the intended direction.** The model is now consistent with chemostat physiology, and 5 g/L improved. The low-sugar failure was not fixed, however. At 1 g/L and in the 8 g/L batch, real yeast overflows much more than the model allows.
+- **Why the model cannot overflow at low sugar.** Overflow needs *fast uptake* and a *low respiration threshold* at the same time. The model ties both to one state R, so when cells switch to high-affinity uptake they also raise their respiration threshold, and the overflow disappears.
+- **Candidate hypothesis, not agreed and not tested.** Transporter affinity may respond quickly to the glucose level, while respiratory derepression is slower. Then cells coming from a high-glucose preculture into low sugar would briefly have high-affinity uptake *and* low respiration, and would overflow. This would require two separate states, with an extra rate parameter and no quantitative source for it yet. Transporter expression is known to track glucose level (Diderich 1999) and affinity is known to change during growth (Walsh 1994). The relative speeds of these changes have not been sourced.
+- **Other open issues:**
+  - The 8 g/L batch uses a different lab strain (H1022), with unknown medium and preculture.
+  - The model now has 8 calibrated parameters.
+  - Combining two strains in one parameter set is an assumption.
