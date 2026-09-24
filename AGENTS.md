@@ -68,6 +68,14 @@ Do not turn the project into a generic SaaS platform, a sales exercise, or a com
 
 Do not claim that simulation alone has validated a real plant or commercial process. Prefer “simulator” or “virtual pilot plant” unless a stronger description is genuinely supported.
 
+## Project records
+
+Start each session by reading `docs/STATE.md`. Then check the files and changes it points to; do not simply trust it. Record decisions, model descriptions, increment reviews, and sources as defined in `docs/decisions/0002-project-records.md`. In particular:
+
+- An accepted decision keeps its reasoning. Supersede it; do not rewrite it.
+- `docs/model/` describes the agreed model and flags where the implementation diverges from it. Never document a bug as intended behaviour.
+- Only Jakob can confirm that he understands or accepts something. An agent's explanation does not establish either.
+
 ## Session continuity
 
 Keep lightweight records of accepted decisions, sources, limitations, and unresolved questions. Distinguish an accepted project choice from an agent suggestion and from an external scientific finding.
