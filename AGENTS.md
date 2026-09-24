@@ -70,7 +70,7 @@ Do not claim that simulation alone has validated a real plant or commercial proc
 
 ## Project records
 
-Start each session by reading `docs/STATE.md`. Then check the files and changes it points to; do not simply trust it. Record decisions, model descriptions, increment reviews, and sources as defined in `docs/decisions/0002-project-records.md`. In particular:
+Start each session by reading `docs/STATE.md`. Then check the files and changes it points to; do not simply trust it. Read `docs/LEARNING.md` before explaining any science. Record decisions, model descriptions, increment reviews, and sources as defined in `docs/decisions/0002-project-records.md`. In particular:
 
 - An accepted decision keeps its reasoning. Supersede it; do not rewrite it.
 - `docs/model/` describes the agreed model and flags where the implementation diverges from it. Never document a bug as intended behaviour.
