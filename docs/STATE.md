@@ -11,7 +11,7 @@ This file is a navigation aid. See [decision 0002](decisions/0002-project-record
 - **Decisions:** [0001](decisions/0001-python-engine.md) (Python engine and backend), [0002](decisions/0002-project-records.md) (project records), [0003](decisions/0003-explanatory-3d.md) (early 3D explains the science), and [0004](decisions/0004-learning-record.md) (learning record).
 - **Learning record:** [LEARNING.md](LEARNING.md). It holds the learning approach, the topics covered with Jakob's own statements, and parked questions.
 - **Sources:** `docs/SOURCES.md`. It is empty for now.
-- **Exploration:** `explorations/001_batch_growth.py`. This is an exploratory toy batch model and not the engine. Jakob's review is pending.
+- **Exploration:** `explorations/001_batch_growth.py`. This is an exploratory toy batch model and not the engine. Jakob has reviewed the loop (see LEARNING.md, step 4).
 - **No engine code and no agreed model yet.**
 
 ## Jakob has reviewed and decided
@@ -60,4 +60,4 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Step 4: Jakob reviews `explorations/001_batch_growth.py` and plays with its numbers. After that comes step 5, comparison with real data, which needs a sourced published growth curve. Build nothing until an increment is agreed.
+Step 4: Jakob predicts the effect of halving the doubling time, then changes the number in `explorations/001_batch_growth.py` to check. After that comes step 5, comparison with real data, which needs a sourced published growth curve. Build nothing until an increment is agreed.
