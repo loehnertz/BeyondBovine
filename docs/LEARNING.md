@@ -94,6 +94,24 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - He predicted that twice-as-fast growth gives the same final amount of yeast, reached sooner. He hesitated towards "less". The same amount is correct for the simple model.
 - He asked why yeast makes ethanol if ethanol is toxic to it. The agent's partial answer: without oxygen, ethanol is the only way to get energy, and yeast tolerates ethanol better than its competitors. The fuller evolutionary answer is parked because it touches the withheld surprise.
 
+### Step 4 — The first simulator (in progress)
+
+**Jakob's own statements:**
+
+- He predicted that yeast rises exponentially (correct) and that sugar falls "logarithmically or negative-exponentially". The agent corrected this: sugar is the upside-down mirror of yeast. It falls slowly at first, then faster and faster, and crashes at the end.
+- He assumed a constant sugar cost per unit of yeast, which is the fixed yield. This is correct.
+
+**Explained so far:**
+
+- In the last doubling time, the yeast eats as much sugar as in all earlier doublings combined.
+- The simple model stops abruptly when the sugar runs out. Real cultures bend more smoothly; why is a later question.
+
+**Proposed increment (awaiting agreement):**
+
+- An exploratory loop in `explorations/` that tracks yeast and sugar.
+- Illustrative numbers, not sourced: doubling time 2 h, yield 0.5 g/g, 20 g sugar, 0.1 g of yeast at the start.
+- Independent checks: the final yeast should be about 10.1 g, and the sugar should run out after about 13 h.
+
 <details>
 <summary>Withheld on purpose (for agents; spoiler for Jakob)</summary>
 
