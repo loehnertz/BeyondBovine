@@ -9,7 +9,7 @@ Ji M, Miao Y, Chen JY, You Y, Liu F, Xu L. *Growth characteristics of freeze-tol
 - **Status:** Figure 1 reviewed qualitatively with Jakob on 2026-09-24. Used as evidence of aerobic ethanol production and subsequent growth on ethanol; no parameters adopted and no model fitted.
 - **Figure 1:** circles = cells on the left logarithmic axis; triangles = glucose and squares = ethanol on the right linear axis. The later ethanol decrease accompanies further cell growth.
 - **Methods and model scope:** medium sterilised before inoculation. The ethanol-growth equations assume other nutrients sufficient. Neither that assumption nor the paper's equations have been adopted for our simulator.
-- **What it measured:** dry biomass (g/L, via OD600), glucose, and ethanol, sampled every 2 h.
+- **What it measured:** dry biomass (g/L, via OD600), glucose, and ethanol, sampled every 2 h. **Discrepancy:** Figure 1 appears to show markers at roughly 1 h spacing. Do not rely on the sampling interval, for example to argue what delay could be resolved, without clarifying this.
 - **Conditions:** one industrial strain (AFY); YPD-based medium with minerals and vitamins; 30 °C, pH 5.0; 1.2 L in a 3 L stirred tank; air 200 L/h; dissolved oxygen held at 20 % of saturation by varying stirrer speed; starting glucose 1, 5, 10, 25, and 40 g/L.
 - **Scope and caveats:** a single freeze-tolerant commercial strain, not a lab reference strain. The medium contains yeast extract and peptone, which are extra carbon and nitrogen beyond glucose. Biomass comes from an OD calibration. Its reported maximum growth rate (0.99 h⁻¹) looks high compared with commonly cited values for *S. cerevisiae* on glucose and needs cross-checking against a second source before any number is used in the model.
 

@@ -137,6 +137,8 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - Chose to learn the biological switch before examining numerical parameters. Said "I guess it matters" about the adaptation period, then independently asked whether nitrogen and other inputs need tracking. This is interest in model scope, not acceptance of a specific delay or nutrient model.
 - Asked about yeast extract and described feeding processed yeast to yeast as "Cannibalism?"; the agent distinguished nutrient recycling from engulfing live cells.
 
+- Asked whether the cells visibly pause between glucose running out and ethanol starting to fall in Figure 1, he said "no visible pause". The agent's reading largely agreed: there is no clear plateau in the cell curve. At most there is a one- to two-point shoulder at the ethanol peak, which is within what the resolution and scatter allow. The dominant feature is the large drop in growth rate after the switch, not a delay.
+
 **Explained, not independently demonstrated or accepted as a model:**
 
 - Growth rate, yield per gram of sugar, and total final yeast are different quantities. Abundant sugar can support fast growth with lower yield; a lower yield need not mean less total yeast.
