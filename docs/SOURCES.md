@@ -34,6 +34,22 @@ Ji M, Miao Y, Chen JY, You Y, Liu F, Xu L. *Growth characteristics of freeze-tol
 - **Use:** concrete example of glucose-regulated machinery for ethanol use; abstract consulted. ADH2 transcription rises on shifting from glucose to ethanol growth conditions.
 - **Scope:** one regulatory component, not a complete diauxic-switch model. No parameter adopted.
 
+## Postma et al. 1989 — where aerobic fermentation starts, in a chemostat
+
+Postma E, Verduyn C, Scheffers WA, van Dijken JP. *Enzymic analysis of the Crabtree effect in glucose-limited chemostat cultures of Saccharomyces cerevisiae.* Applied and Environmental Microbiology 55(2), 468–477 (1989). doi:[10.1128/aem.55.2.468-477.1989](https://doi.org/10.1128/aem.55.2.468-477.1989). Full text: [PMC184133](https://pmc.ncbi.nlm.nih.gov/articles/PMC184133/).
+
+- **Read status:** abstract only. The PDF could not be retrieved from the cloud session because of a CAPTCHA.
+- **What the abstract reports:** strain CBS 8066, grown in glucose-limited chemostat cultures.
+  - Below a growth rate of 0.30 h⁻¹, glucose is fully respired, with a yield of 0.50 g/g.
+  - Above it, acetate and pyruvate appear and the yield drops to 0.47 g/g.
+  - At 0.38 h⁻¹, oxygen uptake reaches its maximum of 12 mmol O₂ per g dry weight per hour.
+  - Above that, aerobic alcoholic fermentation appears and the yield falls towards 0.16 g/g.
+- **Mechanism:** the authors conclude that fermentation is *not primarily* caused by limited respiratory capacity. This contradicts the mechanistic interpretation of Sonnleitner & Käppeli 1986. Malina et al. 2021 offers a protein-allocation explanation instead.
+- **Candidate use:** the threshold at which aerobic ethanol production starts, and the respiratory yield.
+  - Agent's inference: the threshold corresponds to roughly 0.38 / 0.47 ≈ 0.8 g glucose per g cells per hour.
+  - Caveats: this is a different strain from Ji et al., and it was measured in a chemostat, where growth is held steady. A batch culture's changing conditions may behave differently.
+  - No value has been adopted.
+
 ## Supporting discussion references (not model inputs)
 
 - [Oxygen dependence of metabolic fluxes and energy generation of S. cerevisiae CEN.PK113-1A](https://pmc.ncbi.nlm.nih.gov/articles/PMC2507709/): controlled oxygenation in glucose-limited cultures; supports changes in fermentation and biomass yield with oxygen availability. Different strain and continuous-culture conditions from Ji et al.; used qualitatively.

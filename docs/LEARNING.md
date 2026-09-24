@@ -164,6 +164,12 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - **Bottleneck increment (proposed 2026-09-24):** an exploratory `explorations/002_…` using the respiratory-bottleneck idea (Sonnleitner & Käppeli 1986). Sugar uptake depends on the current sugar concentration. Respiration has a maximum capacity per cell, and uptake beyond that capacity overflows to ethanol at a lower yield. A sharp switch to slower ethanol growth follows once the glucose is gone.
   - **Assumptions:** sufficient dissolved oxygen and nutrients, perfect mixing, no switch delay.
   - **Parameters:** need research first, and the transfer between strains must be justified or labelled.
+  - **Parameter research (2026-09-24, in progress):**
+    - The original Sonnleitner & Käppeli paper is paywalled, and its parameter table has not been found in an open source.
+    - Postma et al. 1989 (abstract only) gives a respiratory yield of 0.50 g/g and a fermentation onset between 0.30 and 0.38 h⁻¹ growth rate, for a different strain, in a chemostat.
+    - Postma et al. dispute that limited respiratory capacity is the *cause*. The agent therefore proposed a mechanism-neutral framing: a threshold on the sugar uptake rate, above which the excess goes to ethanol. This uses the same mathematics without claiming why the threshold exists. It awaits Jakob's decision.
+    - Parameters still missing: the maximum uptake rate, and how uptake slows at low sugar.
+    - Ji's Figure 2 must not be used for fitting, because it is the independent test.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.
