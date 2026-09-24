@@ -197,6 +197,13 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
       - ethanol-phase growth rate and yield
     - **Identifiability risk:** one time course may not pin down both the repression and recovery rates.
     - **Finding:** Ji's preculture (20 g/L glucose, late exponential) means the cells probably start repressed. The yield trend may then reflect *recovery* during low-sugar runs more than repression building up. This changes the explanation the model offers, and should be discussed.
+  - **Built (2026-09-24), after Jakob accepted the parameters, including "starts repressed":** `explorations/002_overflow_repression.py`, with Figure 1 digitised into `explorations/data/`. Results are in [the review](reviews/2026-09-24-overflow-repression.md):
+    - the calibration fit is rough
+    - the test gets the trend direction right, but the magnitude is far off
+    - the recovery rate goes to its upper bound, so there is no memory
+    - the fixed literature yields cannot reproduce Ji's measured yield pairs, whatever the model structure
+
+    Jakob has not yet reviewed these results.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.

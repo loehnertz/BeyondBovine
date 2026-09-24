@@ -6,6 +6,7 @@ References the project relies on. Each entry notes what the source justifies and
 
 Ji M, Miao Y, Chen JY, You Y, Liu F, Xu L. *Growth characteristics of freeze-tolerant baker's yeast Saccharomyces cerevisiae AFY in aerobic batch culture.* SpringerPlus 5:503 (2016). doi:[10.1186/s40064-016-2151-3](https://doi.org/10.1186/s40064-016-2151-3). Open access, CC BY 4.0. Full text: [PMC4842200](https://pmc.ncbi.nlm.nih.gov/articles/PMC4842200/).
 
+- **Status (update):** the Figure 1 40 g/L time course was digitised on 2026-09-24 into `explorations/data/ji2016_fig1_40gL.csv`, read by eye with an image overlay check. It is used to calibrate `002_overflow_repression`. Figure 2 is used only as the test.
 - **Status:** Figure 1 reviewed qualitatively with Jakob on 2026-09-24. Used as evidence of aerobic ethanol production and subsequent growth on ethanol; no parameters adopted and no model fitted.
 - **Figure 1:** circles = cells on the left logarithmic axis; triangles = glucose and squares = ethanol on the right linear axis. The later ethanol decrease accompanies further cell growth.
 - **Methods and model scope:** medium sterilised before inoculation. The ethanol-growth equations assume other nutrients sufficient. Neither that assumption nor the paper's equations have been adopted for our simulator.

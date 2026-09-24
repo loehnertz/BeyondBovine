@@ -1,0 +1,20 @@
+Calibrated on 40 g/L only:
+  repression, KR=0.1 g/L   qs_max=3.18 qcrit_min=0.33 k_rec=20.00 qe_max=0.17 y_xe=0.41
+  repression, KR=0.5 g/L   qs_max=3.28 qcrit_min=0.19 k_rec=20.00 qe_max=0.17 y_xe=0.41
+  repression, KR=2.0 g/L   qs_max=3.37 qcrit_min=0.02 k_rec=10.63 qe_max=0.16 y_xe=0.41
+  constant threshold       qs_max=3.16 qcrit_min=0.35 k_rec=0.10 qe_max=0.17 y_xe=0.41
+
+Test: glucose-phase cell yield (g/g), model vs Ji Fig. 2
+  S0      Ji  repression, KR=0.1 g/L  repression, KR=0.5 g/L  repression, KR=2.0 g/L      constant threshold
+    1   0.41                    0.22                    0.24                    0.24                    0.18  
+    5   0.26                    0.17                    0.19                    0.20                    0.15  
+   10   0.24                    0.16                    0.18                    0.18                    0.15  
+   25   0.21                    0.15                    0.16                    0.16                    0.15  
+   40   0.20                    0.15                    0.15                    0.15                    0.15  (calib.)
+
+Test: glucose-phase ethanol yield (g/g)
+    1   0.22                    0.30                    0.28                    0.27                    0.34
+    5   0.28                    0.36                    0.34                    0.32                    0.38
+   10   0.31                    0.38                    0.36                    0.34                    0.39
+   25   0.36                    0.39                    0.38                    0.37                    0.39
+   40   0.40                    0.39                    0.39                    0.39                    0.39

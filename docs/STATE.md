@@ -12,6 +12,7 @@ This file is a navigation aid. See [decision 0002](decisions/0002-project-record
 - **Learning record:** [LEARNING.md](LEARNING.md). It holds the learning approach, the topics covered with Jakob's own statements, and parked questions.
 - **Sources:** `docs/SOURCES.md`. Ji et al. Figure 1 has now been reviewed qualitatively with Jakob; supporting mechanism references and limitations are recorded there. No parameters have been adopted.
 - **Exploration:** `explorations/001_batch_growth.py`. This is an exploratory toy batch model and not the engine. Jakob has reviewed the loop (see LEARNING.md, step 4).
+- **Exploration:** `explorations/002_overflow_repression.py`, an overflow model with glucose repression calibrated on Ji et al. 40 g/L. Its test failed on magnitude; see [the review](reviews/2026-09-24-overflow-repression.md). Jakob has not yet reviewed it.
 - **No engine code and no agreed model yet.**
 
 ## Jakob has reviewed and decided
@@ -61,8 +62,4 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Continue step 5 from the qualitative comparison already made; do not replay the Crabtree reveal or ask Jakob to identify ethanol again. Read the pace refinement and his statements in `LEARNING.md`.
-
-Proposed bounded question: **What can the measured curves support about the glucose-to-ethanol transition, and how much mechanism do we need to represent it?** Jakob chose the biological switch first, which has now been explained, and raised adaptation time and other nutrients. Reconnect those questions to the graph before proposing equations. Cross-check growth-rate estimates before adopting numbers. A two-stage extension with sufficient oxygen/nutrients remains an agent suggestion; agree on scope before implementation.
-
-Session review: [2026-09-24 batch comparison](reviews/2026-09-24-batch-comparison.md).
+Jakob reviews the result of `002_overflow_repression` ([review](reviews/2026-09-24-overflow-repression.md)). The model reproduces the trend's direction but not its magnitude, and the fixed literature yields cannot match Ji's yield pairs. Decide which explanation to investigate first: extra carbon from the medium, aerobic fermentative yield, strain, or measurement. Do not tune the model to Figure 2.
