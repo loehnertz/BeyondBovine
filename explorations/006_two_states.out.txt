@@ -1,0 +1,33 @@
+Calibrated on Ji 40 g/L + van Hoek chemostat:
+  qs_max      4.048
+  qcrit_min   0.432
+  qcrit_max   0.792
+  k_rec       2.047
+  qe_max      0.142
+  y_xe        0.374
+  ks_low_aff  8.765
+  y_xye       0.018
+  speed_ratio 4.313
+
+Chemostat (calibration): D, glucose uptake and ethanol production in mmol/g/h, model vs van Hoek
+  D=0.025  glucose  0.29 vs  0.30   ethanol  0.00 vs  0.00
+  D=0.050  glucose  0.58 vs  0.60   ethanol  0.00 vs  0.00
+  D=0.100  glucose  1.16 vs  1.10   ethanol  0.00 vs  0.00
+  D=0.150  glucose  1.73 vs  1.70   ethanol  0.00 vs  0.00
+  D=0.200  glucose  2.31 vs  2.30   ethanol  0.00 vs  0.00
+  D=0.250  glucose  2.89 vs  2.80   ethanol  0.00 vs  0.00
+  D=0.280  glucose  3.24 vs  3.40   ethanol  0.00 vs  0.11
+  D=0.300  glucose  4.32 vs  4.50   ethanol  1.78 vs  2.30
+  D=0.350  glucose  9.02 vs  8.60   ethanol 11.07 vs  9.50
+  D=0.400  glucose 10.68 vs 11.10   ethanol 14.14 vs 13.90
+
+Test: Ji Fig. 2 glucose-phase yields (cells / ethanol, g/g), model vs Ji
+    1 g/L  model 0.48 / 0.00   Ji 0.41 / 0.22  
+    5 g/L  model 0.34 / 0.15   Ji 0.26 / 0.28  
+   10 g/L  model 0.26 / 0.25   Ji 0.24 / 0.31  
+   25 g/L  model 0.20 / 0.33   Ji 0.21 / 0.36  
+   40 g/L  model 0.18 / 0.35   Ji 0.20 / 0.40  (calibration level)
+
+Test: compiled 8 g/L batch (no yeast extract assumed), glucose-phase yields at glucose exhaustion
+  model (starts repressed): 0.28 / 0.22   data 0.14 / 0.39
+  model (starts derepressed): 0.29 / 0.22   data 0.14 / 0.39

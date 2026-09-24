@@ -62,10 +62,10 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Jakob reviews round 4 (`explorations/005_state_dependent_uptake.py`; [review](reviews/2026-09-24-overflow-repression.md)).
+Jakob reviews round 5 (`explorations/006_two_states.py`; [review](reviews/2026-09-24-overflow-repression.md)).
 
-- Linking uptake affinity to repression makes the model consistent with the van Hoek chemostat and improves the 5 g/L test.
-- At 1 g/L and in the compiled 8 g/L batch it still under-predicts overflow.
-- **Candidate next step (not agreed):** separate the two states: fast transporter adaptation and slow respiratory derepression.
-- **Alternative:** pause the model and consolidate what step 5 has taught, because the model is growing more flexible with each round.
-- Do not tune the model to the test data.
+- The two-state hypothesis did not fix the low-sugar under-prediction, so it is falsified as implemented.
+- After five rounds, the model fits chemostat data and 10–40 g/L batch data, but not low starting sugar.
+- The low-sugar evidence itself has weaknesses: possible preculture carry-over at 1 g/L, and an unidentified source for the 8 g/L batch.
+
+**Agent's recommendation:** stop adding mechanism. Consolidate what step 5 taught, and treat better low-sugar batch data as the prerequisite for the next model change. Do not tune the model to the test data.

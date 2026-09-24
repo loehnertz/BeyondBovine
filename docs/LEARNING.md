@@ -219,6 +219,7 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
     - A second dataset (the compilation, chemostat and 8 g/L batch) confirmed strong overflow at low sugar in batch, and high-affinity respiratory growth in chemostats.
     - Jakob agreed to link affinity to repression (`005`). This improved 5 g/L and fits the chemostat, but not 1 g/L or the 8 g/L batch.
     - The next hypothesis is two states with different speeds.
+  - **Round 5 (2026-09-24):** Jakob chose to try the two-state version (fast transporters, slow respiration) instead of consolidating. It did not fix the low-sugar failure. The hypothesis is falsified as implemented. The agent recommends consolidating and looking for better low-sugar data.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.

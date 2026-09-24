@@ -147,3 +147,35 @@ At 40 g/L, Ji's cells plus ethanol, plus the unavoidable CO₂ released as ethan
   - The 8 g/L batch uses a different lab strain (H1022), with unknown medium and preculture.
   - The model now has 8 calibrated parameters.
   - Combining two strains in one parameter set is an assumption.
+
+## Round 5: two adaptation states (`explorations/006_two_states.py`)
+
+**Change (agreed with Jakob).** Transporter affinity T and respiratory derepression R became separate states. T adapts `speed_ratio` times faster than R, with the ratio calibrated and constrained to be at least 1. The hypothesis was that cells arriving in low sugar briefly combine fast uptake with low respiration, and so overflow.
+
+**Result: the hypothesis did not rescue the low-sugar predictions.**
+
+- **Calibration:** as good as 005. The chemostat onset at D = 0.30 is slightly better. The fitted speed ratio is 4.3, and the repressed threshold rose to 0.43 g/g/h.
+- **Ji test:**
+
+  | Starting glucose | 006 (cells / ethanol) | 005 | Ji |
+  |---|---|---|---|
+  | 1 g/L | 0.48 / 0.00 | 0.46 / 0.01 | 0.41 / 0.22 |
+  | 5 g/L | 0.34 / 0.15 | 0.31 / 0.19 | 0.26 / 0.285 |
+  | 10 g/L | 0.26 / 0.25 | 0.25 / 0.27 | 0.24 / 0.31 |
+  | 25 g/L | 0.20 / 0.33 | 0.19 / 0.34 | 0.215 / 0.365 |
+
+- **8 g/L batch:** 0.28 / 0.22, against 0.14 / 0.39 in the data.
+
+**Why it failed.** Calibrating on 40 g/L plus the chemostat sets the respiration thresholds so that the chemostat stays fully respiratory up to D ≈ 0.28. At 1–5 g/L, even with faster high-affinity uptake, the uptake barely exceeds those thresholds. The extra state gives the model freedom that the calibration data do not use in the way the test needs. This is a falsification of the hypothesis *as implemented*, and it is recorded as such.
+
+**Weaknesses in the low-sugar evidence itself**, raised to keep the conclusion honest:
+
+- **Ji 1 g/L:** the inoculum is 5 % of a 21 h YPD preculture. Ethanol carried over from it could be comparable to the ethanol formed from 1 g/L glucose. Ji's Figure 1 shows about 0.1 g/L ethanol at t = 0 in the 40 g/L run, which is within the reading error of zero. If the same carry-over were present at 1 g/L, it would account for up to about 0.1 of the 0.22 g/g. It is unknown whether Ji subtracted it.
+- **Compiled 8 g/L batch:** the original source is not identified, and the early points are stoichiometrically impossible.
+- **Ji 5 g/L:** this remains the cleanest unexplained gap. The model gives 0.15–0.19 ethanol against Ji's 0.285.
+
+**Overall status after five rounds.**
+
+- **What works:** one structure (overflow above a threshold, repression, yeast extract, state-dependent uptake) reproduces a baker's-yeast chemostat and a 40 g/L batch. It predicts untouched batch yields at 10–40 g/L within about 0.02–0.05 g/g.
+- **What fails:** it under-predicts overflow at low starting sugar, and none of three mechanism additions fixed that.
+- **What the model has become:** nine calibrated parameters on two calibration sets. Further mechanism should wait for better low-sugar data: batch time courses with dense early sampling, known preculture, defined medium, and a strain close to the calibration strain.
