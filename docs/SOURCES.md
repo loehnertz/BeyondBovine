@@ -108,6 +108,26 @@ These sources were read to decide how to represent overflow. Agents read the abs
   - **Supports:** the idea that uptake kinetics depend on the cells' history. This is a candidate explanation for `004` failing at low sugar; untested.
 - **Diderich JA et al. (1999)**, already listed above. Transporter gene expression tracks the extracellular glucose concentration.
 
+## Low-sugar data compilation (found 2026-09-24)
+
+- **Moreno-Paz S, Schmitz J, Martins dos Santos VAP, Suarez-Diez M (2022).** *Enzyme-constrained models predict the dynamics of Saccharomyces cerevisiae growth in continuous, batch and fed-batch bioreactors.* Microbial Biotechnology 15, 1434–1445. doi:[10.1111/1751-7915.13995](https://doi.org/10.1111/1751-7915.13995), [PMC9049605](https://pmc.ncbi.nlm.nih.gov/articles/PMC9049605/).
+  - **Data:** `SupData_Fermentation.xlsx` in [their GitLab repository](https://gitlab.com/saramorenopaz/ecmodels-predict-growth-dynamics-s.-cerevisiae), **MIT licence**. It is a *secondary compilation* of published data, with the original papers named in its Summary sheet:
+    - chemostat series: Postma 1989 (CBS 8066), **van Hoek 1998 (industrial baker's yeast DS28911)**, Rieger 1982 (H1022), Canelas 2010
+    - batch: **Hanly 2011, H1022, 8 g/L glucose**, DO > 20 %
+    - their own fed-batch data (OUR/CPR)
+  - **Quality caveats:**
+    - Transcription and unit inconsistencies exist; for example, the "Concentrations (mM)" header does not match every column, and some Postma rows are misaligned.
+    - Values must be cross-checked against the original papers before quantitative use.
+    - Media and precultures of the original studies are not recorded in the compilation.
+  - **First reading (agent, qualitative):**
+    - **Hanly 8 g/L batch:** glucose 8 → 0 in about 7 h, biomass 0.1 → 1.2 g/L, ethanol up to about 3.1 g/L. That is roughly 0.39 g ethanol per g glucose, so **strong overflow at low starting sugar**, as in Ji at 1–10 g/L. This supports the view that model `004`'s low-sugar failure is a model problem, not a problem with Ji's data.
+    - **van Hoek chemostat (industrial strain):**
+      - fully respiratory, with yield 0.47–0.49, up to D ≈ 0.28 h⁻¹
+      - ethanol production rises steeply above that
+      - maximum O₂ uptake about 7.4 mmol/g/h at D = 0.28
+      - at the onset, glucose uptake is about 3.4 mmol/g/h, or **0.61 g/g/h**
+    - **Postma chemostat:** residual glucose is only about 0.1 (unit to be verified) at D = 0.25–0.33 while the cells respire fully. Derepressed cells therefore take up glucose efficiently at very low concentrations. Uptake is high-affinity, the opposite of the KS ≈ 10 g/L fitted to Ji's batch.
+
 ## Supporting discussion references (not model inputs)
 
 - [Oxygen dependence of metabolic fluxes and energy generation of S. cerevisiae CEN.PK113-1A](https://pmc.ncbi.nlm.nih.gov/articles/PMC2507709/): controlled oxygenation in glucose-limited cultures; supports changes in fermentation and biomass yield with oxygen availability. Different strain and continuous-culture conditions from Ji et al.; used qualitatively.
