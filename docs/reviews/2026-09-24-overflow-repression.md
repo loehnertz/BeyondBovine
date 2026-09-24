@@ -34,7 +34,7 @@ With the fixed literature yields, no model of this form can hit Ji's measured yi
 
 Ji's cells grew more per gram of glucose than the fixed yields allow. Candidate explanations, none of them tested:
 
-1. **Extra carbon in the medium.** Yeast extract and peptone are scaled with glucose, so some biomass may come from them.
+1. **Extra carbon in the medium.** Yeast extract (about 0.22 g per g glucose; there is no peptone in the batch medium, see `SOURCES.md`) is scaled with glucose, so some biomass may come from it.
 2. **Higher yields in aerobic cells.** The biomass yield of the fermented share may be higher in aerobic respiro-fermenting cells than the anaerobic 0.10 (Verduyn 1990).
 3. **Different strain.** AFY may have a higher respiratory yield than CBS 8066.
 4. **Measurement.** The biomass comes from an OD calibration.
