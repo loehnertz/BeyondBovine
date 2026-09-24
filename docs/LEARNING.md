@@ -112,7 +112,9 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - Illustrative numbers, not sourced: doubling time 2 h, yield 0.5 g/g, 20 g sugar, 0.1 g of yeast at the start.
 - Independent checks: the final yeast should be about 10.1 g, and the sugar should run out after about 13 h.
 
-- `explorations/001_batch_growth.py` is built and runs. Both independent checks match: 10.10 g of final yeast, and the sugar is gone at 13.32 h. Jakob's review of the code is pending.
+- `explorations/001_batch_growth.py` is built and runs. Both independent checks match: 10.10 g of final yeast, and the sugar is gone at 13.32 h.
+- Jakob reviewed the loop and correctly identified the `min(...)` line as the one that stops growth when the sugar is gone. He thought the sugar tapers through tiny numbers. The agent clarified that it hits exactly zero in one step, which causes the sharp corner. The `min` is where the "full speed until the sugar is gone" assumption lives in the code. Real cells slow down as sugar becomes scarce; this is a candidate later step, uptake kinetics.
+- Next: Jakob predicts the effect of halving the doubling time, which tests his step 3 prediction.
 
 **Side questions answered:**
 
