@@ -175,6 +175,12 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
     - **S. cerevisiae specifically:** besides the immediate short-term effect, high glucose *represses* respiratory machinery over time (the long-term effect, or glucose repression). The threshold may therefore not be constant during a batch.
     - **Unsettled:** *why* the threshold exists. Four competing explanations are recorded in `SOURCES.md`.
     - **Agent recommendation:** first model a constant uptake threshold and test it against Ji's Figure 2. If the steep yield drop is not reproduced, glucose repression becomes the prime candidate for the next increment. This awaits Jakob's decision.
+  - **Jakob's choice (2026-09-24):** include glucose repression from the start ("Let's go for glucose repression!"). The agent had recommended a constant threshold first.
+    - **Proposed representation:** a tracked respiratory-capacity quantity that sets the overflow threshold. It declines while sugar is high and recovers once sugar is gone.
+    - **Expected:** a lower yield at high starting sugar, because exposure lasts longer.
+    - **Consistency check:** recovery must not create a visible pause, because Figure 1 shows none.
+    - **Proposed evidence split (awaiting Jakob's agreement):** calibrate only on Ji's 40 g/L time course (Figure 1). Predict the 1, 5, 10, and 25 g/L levels and compare them with Figure 2 without tuning. Repression is switchable, so the constant-threshold version remains available as a comparison.
+    - **Next:** parameter research, including the repression and recovery rates.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.
