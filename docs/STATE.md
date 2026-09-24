@@ -10,7 +10,7 @@ This file is a navigation aid. See [decision 0002](decisions/0002-project-record
 - **Working agreement:** `AGENTS.md`, with `CLAUDE.md` as a symlink to it.
 - **Decisions:** [0001](decisions/0001-python-engine.md) (Python engine and backend), [0002](decisions/0002-project-records.md) (project records), [0003](decisions/0003-explanatory-3d.md) (early 3D explains the science), and [0004](decisions/0004-learning-record.md) (learning record).
 - **Learning record:** [LEARNING.md](LEARNING.md). It holds the learning approach, the topics covered with Jakob's own statements, and parked questions.
-- **Sources:** `docs/SOURCES.md`. It holds one candidate source for step 5 (Ji et al. 2016), which Jakob has not yet reviewed.
+- **Sources:** `docs/SOURCES.md`. Ji et al. Figure 1 has now been reviewed qualitatively with Jakob; supporting mechanism references and limitations are recorded there. No parameters have been adopted.
 - **Exploration:** `explorations/001_batch_growth.py`. This is an exploratory toy batch model and not the engine. Jakob has reviewed the loop (see LEARNING.md, step 4).
 - **No engine code and no agreed model yet.**
 
@@ -45,8 +45,8 @@ Scientific learning has started; see [LEARNING.md](LEARNING.md) for what Jakob h
 1. What is a fermentation? What goes in and what comes out? (done)
 2. How does a population of cells grow? This covers exponential growth and doubling time. (done)
 3. Why does growth stop? This covers the yield: roughly a fixed amount of yeast per gram of sugar. (done)
-4. A first simulator: yeast and sugar updated step by step in Python.
-5. Compare the simulator with real data.
+4. A first simulator: yeast and sugar updated step by step in Python (toy reviewed).
+5. Compare the simulator with real data (qualitative comparison started; see LEARNING.md).
 
 The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the working example used while learning.
 
@@ -56,8 +56,13 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 - **Fed-batch (deferred).** The question is what limits the feed rate in a fed-batch run, and what happens beyond that limit. It comes after the first goal. Two prediction questions posed earlier are also deferred, because they assume knowledge that has not been covered yet:
   1. With a constant feed rate, once sugar is consumed as fast as it arrives, how do the growth rate and dissolved oxygen change over time?
   2. With an exponentially increasing feed, what happens to dissolved oxygen, and what ends that phase of the run?
-- **Host organism and first simplification** for the simulator. Both are to be decided at step 4.
+- **Host organism and agreed model scope** remain open beyond the existing exploratory toy.
+- **Next scientific increment:** ethanol production/consumption, whether to represent adaptation, and whether to assume other nutrients sufficient. These are discussed proposals, not accepted model choices; see LEARNING.md.
 
 ## Proposed next step
 
-Step 5: compare the batch toy with real data. Start by reviewing the candidate source, Ji et al. 2016 in `SOURCES.md`, and what its scope allows. Build nothing until an increment is agreed.
+Continue step 5 from the qualitative comparison already made; do not replay the Crabtree reveal or ask Jakob to identify ethanol again. Read the pace refinement and his statements in `LEARNING.md`.
+
+Proposed bounded question: **What can the measured curves support about the glucose-to-ethanol transition, and how much mechanism do we need to represent it?** Jakob chose the biological switch first, which has now been explained, and raised adaptation time and other nutrients. Reconnect those questions to the graph before proposing equations. Cross-check growth-rate estimates before adopting numbers. A two-stage extension with sufficient oxygen/nutrients remains an agent suggestion; agree on scope before implementation.
+
+Session review: [2026-09-24 batch comparison](reviews/2026-09-24-batch-comparison.md).

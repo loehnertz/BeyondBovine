@@ -20,7 +20,8 @@ Agreed on 2026-09-24, after a trial on the first topic.
 
 **Style:**
 
-- End with one question, plainly worded. Do not use labels such as "Prediction:".
+- When a question advances the discussion, ask one plainly worded question. Do not use labels such as "Prediction:" or force a check after every explanation.
+- **Pace refinement from Jakob, 2026-09-24:** "Ethanol, c'mon, a touch less baby steps." Skip obvious recall questions and repeated requests to restate established points. Keep explanations accessible, but spend questions on meaningful mechanisms, uncertainties, and modelling choices.
 - Introduce each technical term explicitly the first time it is used.
 - Keep the chunks small. Jakob found the pace of the first session good.
 - The agent is a tutor, not an authority. Flag uncertainty. Any claim the project relies on needs a source.
@@ -45,7 +46,7 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - Sugar is both fuel and building material.
 - The growth medium (the nutrients the yeast grows in).
 - **Respiration** (with oxygen): sugar becomes new cells, CO₂, and water, and releases a lot of energy. Energy is carried by ATP. Heat is released.
-- **Fermentation** (without oxygen): sugar becomes ethanol and CO₂, and releases little energy.
+- **Fermentation** (initially introduced as the route without oxygen): sugar becomes ethanol and CO₂, with less ATP per sugar than respiration. **Correction, step 5:** it also occurs with oxygen available; see the Crabtree discussion below.
 - "Fermentation" means something different to biologists and to industry.
 - What yeast is:
   - a single-celled fungus
@@ -94,7 +95,7 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - He predicted that twice-as-fast growth gives the same final amount of yeast, reached sooner. He hesitated towards "less". The same amount is correct for the simple model.
 - He asked why yeast makes ethanol if ethanol is toxic to it. The agent's partial answer: without oxygen, ethanol is the only way to get energy, and yeast tolerates ethanol better than its competitors. The fuller evolutionary answer is parked because it touches the withheld surprise.
 
-### Step 4 — The first simulator (in progress)
+### Step 4 — The first simulator (toy reviewed; reality comparison continues in step 5)
 
 **Jakob's own statements:**
 
@@ -120,16 +121,47 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 
 **Side questions answered:**
 
-- **What happens when the sugar runs out?** Yeast doesn't die immediately. It enters the **stationary phase**: it stops dividing, lives on internal reserves, and becomes more stress-resistant. It can survive for a long time, and it resumes growing after a delay if sugar is added. The classic batch phases are **lag, exponential, stationary, and death**. Dried baker's yeast is an extreme form of this dormancy.
+- **What happens when the sugar runs out?** **Correction from step 5:** growth need not stop if another usable carbon source remains and conditions permit its use. The earlier explanation below assumed no such source. Yeast doesn't die immediately. It enters the **stationary phase**: it stops dividing, lives on internal reserves, and becomes more stress-resistant. It can survive for a long time, and it resumes growing after a delay if sugar is added. The classic batch phases are **lag, exponential, stationary, and death**. Dried baker's yeast is an extreme form of this dormancy.
 - **Logarithmic versus exponential:** the logarithm is the inverse of the exponential. It answers "how many doublings to get this big?": log₂(4096) = 12. Logarithmic growth gets slower and slower. On a log-scale plot, exponential growth becomes a straight line.
 
-<details>
-<summary>Withheld on purpose (for agents; spoiler for Jakob)</summary>
+### Step 5 — Comparing with real growth (in progress, 2026-09-24)
 
-Yeast also makes ethanol *with* plenty of oxygen, when sugar is abundant. This is the Crabtree effect, or overflow metabolism. It is the surprise planned for step 5 of the first goal, when the batch model is compared with real data. It is also why fed-batch exists. Let Jakob discover it; do not reveal it earlier.
-</details>
+**Jakob's own statements and review:**
+
+- Predicted that more sugar would let growth continue longer, and that sufficient oxygen meant no ethanol. This followed the toy and the earlier incomplete explanation; the agent corrected the oxygen-only account.
+- Suggested supplying sugar "Over time?" to avoid accumulation. This introduced fed-batch conceptually; feed-rate limits remain deferred.
+- Asked repeatedly why abundant sugar lowers yield, distinguishing this from oxygen shortage. After the protein-machinery versus sugar-efficiency explanation, said "Now I get it" and asked how cells detect abundance.
+- Asked whether the response is "pre-programmed in its DNA"; confirmed the distinction between inherited response machinery and a changing cellular state with "Yup".
+- Restated the Crabtree effect: "too much sugar makes the cell also use fermentation ... because of the abundance". The agent confirmed, qualifying that this means abundant enough to trigger the behaviour, not necessarily harmful sugar concentrations.
+- Viewed Figure 1 of Ji et al. after the remote image failed and a direct attachment was provided. Correctly interpreted the later phase: "It consumes its own previous output" (ethanol). Identified ethanol as the missing tracked substance without needing an elementary check.
+- Chose to learn the biological switch before examining numerical parameters. Said "I guess it matters" about the adaptation period, then independently asked whether nitrogen and other inputs need tracking. This is interest in model scope, not acceptance of a specific delay or nutrient model.
+- Asked about yeast extract and described feeding processed yeast to yeast as "Cannibalism?"; the agent distinguished nutrient recycling from engulfing live cells.
+
+**Explained, not independently demonstrated or accepted as a model:**
+
+- Growth rate, yield per gram of sugar, and total final yeast are different quantities. Abundant sugar can support fast growth with lower yield; a lower yield need not mean less total yeast.
+- Crabtree effect: aerobic ethanol production at abundant glucose. A protein-allocation trade-off helps explain it: fermentation uses more sugar but can require less enzyme machinery for a given ATP production rate. This is a supported explanatory account, not a conscious choice or a complete universal mechanism.
+- A qualitative sugar/oxygen matrix. Oxygen sufficiency is relative to demand, and there is no universal ranking of growth speeds across four boxes.
+- Ethanol retains usable chemical energy and carbon. Respiration can extract more energy; breaking bonds alone costs energy, and the net reaction determines energy release. CO₂ and water are oxidised end products in this context; restoring fuel from them requires an energy input.
+- Glucose repression, the diauxic shift, and respiratory growth on ethanol. Changing gene activity produces messenger RNA, which ribosomes use to build enzymes; protein abundance and activity change without changing the DNA. ADH2 was introduced as one example, not the entire switch.
+- Nitrogen for proteins and nucleic acids; other nutrient requirements. Tracking a nutrient is distinct from assuming it remains sufficient. Nitrogen depletion could prevent further growth even with ethanol left.
+- Yeast extract as soluble material from disrupted yeast; peptone and yeast extract make the medium chemically complex. Exact nutrient composition cannot be inferred from their total mass alone. No quantitative nutrient composition has been adopted.
+- Contamination: other organisms could compete or alter products. The paper reports medium sterilisation, but this is not proof of exhaustive contamination checks. The toy contains only one population.
+- Wine was an analogy, not a new project direction: ordinary storage is not the continuously aerated experiment. Ethanol consumption requires suitable living yeast and oxygen; air exposure can also enable spoilage. Sugar respiration has been studied for alcohol reduction, with flavour and oxidation trade-offs. Jakob explicitly said he is not interested in winemaking per se and returned to the main thread.
+
+**Figure interpretation and limits:**
+
+- Ji et al. Figure 1: circles = cells, left logarithmic axis; triangles = glucose and squares = ethanol, right linear axis. Time is in hours. The agent initially swapped glucose/ethanol symbols and corrected this when attaching the actual figure. Do not repeat that error.
+- The qualitative comparison reveals ethanol production and continued growth after glucose depletion, neither represented in the toy. There has been no digitisation, parameter fit, numerical overlay, or validation of an extended model.
+- The paper's unusually high fitted growth-rate values still need cross-checking. Glucose-stage yield must not be treated as whole-run yield when ethanol is subsequently consumed.
+
+**Proposals awaiting agreement:**
+
+- Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.
+- The agent recommended keeping nitrogen sufficient initially and considering nitrogen limitation later. Jakob has not accepted that scope or an implementation increment.
+- No simulator code or accepted scientific model changed during this session.
 
 ## Parked questions
 
 - **Why is ethanol, specifically, the product when yeast ferments?** Jakob suspects a chemical logic and is right. It needs some groundwork on how sugar is broken down. (Raised 2026-09-24.)
-- **Why does yeast make ethanol if it harms the yeast itself?** This is the evolutionary angle. Answer it together with the chemistry question above, after the step 5 surprise. Parts of the explanation are debated, so use sources. (Raised 2026-09-24.)
+- **Why does yeast make ethanol if it harms the yeast itself?** This is the evolutionary angle. The machinery/efficiency trade-off has now been discussed, but ethanol toxicity, ecological competition, and the evolutionary argument have not been fully resolved. Parts of the explanation are debated, so use sources. (Raised 2026-09-24.)
