@@ -209,6 +209,11 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
     - The model with yeast extract (`003`) improved cell yields only slightly and made ethanol overshoot.
     - The main misfit is the glucose tail (uptake kinetics).
     - Next proposal: calibrate KS. Not yet agreed.
+  - **Round 3 (2026-09-24):** Jakob asked what KS is. The agent explained it as the half-speed sugar level of uptake, using the Monod equation, and linked it to his step 4 "tiny number" intuition. Jakob has not restated it yet.
+    - The calibrated KS (8–14 g/L) fits the literature for low-affinity transporters.
+    - The test fits at 10–40 g/L. At 1–5 g/L the failure flips: the model makes too little ethanol.
+    - Repression worsens the low-sugar prediction.
+    - Low sugar is the regime fed-batch depends on.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.

@@ -74,3 +74,38 @@ At 40 g/L, Ji's cells plus ethanol, plus the unavoidable CO₂ released as ethan
 **What the result shows.** Yeast extract is real, but it is not the main problem. The dominant misfit is visible in the 40 g/L glucose panel. The model's glucose runs out abruptly at about 7.4 h. The data show a tail of 9.8 g/L at 7 h, 2.3 g/L at 8 h and 1.0 g/L at 9 h, and during that tail the cells grow from 6 to 8.75 g/L. Because the model cannot slow uptake at a few g/L of glucose, this growth is counted as the ethanol phase. That distorts the glucose-phase yields and keeps overflow going at low starting sugar.
 
 **Candidate next step (not agreed):** calibrate KS, the sugar level at which uptake is half its maximum, on the 40 g/L tail instead of fixing it at 0.1 g/L. The justification is that Verduyn's value comes from glucose-limited chemostats, where high-affinity transporters dominate. In a high-glucose batch, low-affinity transporters dominate (Diderich et al. 1999). A source for their affinity values is still needed.
+
+## Round 3: KS calibrated (`explorations/004_calibrated_ks.py`)
+
+**Change.** KS, the sugar level at which uptake runs at half speed, is calibrated on the 40 g/L run instead of being fixed at 0.1 g/L. Everything else is as in 003.
+
+**Plausibility check (passed).**
+- The fitted KS is **8–14 g/L** across the variants.
+- That falls inside the half-speed range of yeast's low-affinity glucose transporters, 50–100 mM or 9–18 g/L for Hxt1/3 (Reifenberger et al. 1997).
+- The 0.1 g/L literature value came from glucose-limited chemostats. It was the wrong transfer for a high-glucose batch.
+
+**Calibration.** The 40 g/L time course, including the glucose tail, is now reproduced well.
+
+**Test (Figure 2, never fitted).**
+
+| Starting glucose | Ji cells / ethanol | constant + YE | repression + YE (KR 0.5) |
+|---|---|---|---|
+| 1 | 0.41 / 0.22 | 0.47 / 0.00 | 0.52 / 0.00 |
+| 5 | 0.26 / 0.285 | 0.32 / 0.11 | 0.45 / 0.00 |
+| 10 | 0.24 / 0.31 | **0.24 / 0.27** | 0.33 / 0.17 |
+| 25 | 0.215 / 0.365 | **0.19 / 0.37** | 0.22 / 0.33 |
+| 40 | 0.20 / 0.40 | 0.17 / 0.39 (calibrated) | 0.18 / 0.37 (calibrated) |
+
+- **10–40 g/L:** the constant-threshold variant is now close to Ji.
+- **1–5 g/L:** the failure has flipped. The model predicts little or no ethanol, but Ji's yeast made substantial ethanol even at 1 g/L. With KS around 10 g/L, uptake at 1–5 g/L stays below the respiration threshold, so the model respires. In the repression variants, fast recovery also re-derepresses the cells almost immediately.
+- **Repression makes the low-sugar prediction worse, not better.** This is the opposite of what we hoped for when we chose to include it. Recovery must be fast to show "no pause" at 40 g/L, and fast recovery removes overflow at low sugar.
+
+**Model flexibility warning.** Seven parameters are calibrated on one run. Several run to their bounds (qcrit_min → 0, k_rec → 20), and they trade off against KR. A good 40 g/L fit therefore proves little on its own. The test is what carries the evidence.
+
+**What this means.** No single set of *current-state* rules (uptake depending on current glucose, recovery depending on current glucose) fits both the 40 g/L run and the low-sugar runs. Candidate explanations, none of them tested:
+
+- **The cells' history matters.** Transporter makeup and repression may carry over from the high-glucose preculture, and Walsh et al. 1994 report that transport affinity changes during growth on glucose.
+- **The 1–5 g/L points are unreliable.** Their glucose phase lasts about 1–2 h, which is only 1–2 samples.
+- **Carry-over from the preculture** of glucose or ethanol, which matters most at low levels.
+
+**Relevance to the project.** Fed-batch deliberately holds glucose low, which is exactly the regime where this model now fails. Low-sugar behaviour is therefore not a side issue for the deferred fed-batch question. It is the main one.

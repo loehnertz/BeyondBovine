@@ -96,6 +96,18 @@ These sources were read to decide how to represent overflow. Agents read the abs
   - **Used:** context only. One extract reported 64 % protein (dry weight), 1.3 % fat and 4 % RNA. It is low in carbohydrate and rich in amino acids.
   - **Scope:** composition varies strongly between extracts and processes.
 
+## Glucose transport kinetics (abstracts read, 2026-09-24)
+
+- **Reifenberger E, Boles E, Ciriacy M (1997).** *Kinetic characterization of individual hexose transporters of Saccharomyces cerevisiae and their relation to the triggering mechanisms of glucose repression.* European Journal of Biochemistry 245, 324–333. doi:[10.1111/j.1432-1033.1997.00324.x](https://doi.org/10.1111/j.1432-1033.1997.00324.x).
+  - **Reports:** the glucose Km of individual transporters. Hxt1/3 (low affinity): 50–100 mM, about 9–18 g/L. Hxt2/4: about 10 mM, about 1.8 g/L. Hxt6/7 and Gal2 (high affinity): 1–2 mM.
+  - **Also reports:** the strength of the glucose-repression signal correlates with the glucose consumption rate.
+  - **Used:** as a plausibility range for the KS calibrated in `004`. The fitted 8–14 g/L falls in the Hxt1/3 range.
+  - **Scope:** single-transporter strains. The effective KS of a wild-type cell also includes steps after transport (Elbing 2004).
+- **Walsh MC, Smits HP, Scholte M, van Dam K (1994).** *Affinity of glucose transport in Saccharomyces cerevisiae is modulated during growth on glucose.* Journal of Bacteriology 176, 953–958. doi:[10.1128/jb.176.4.953-958.1994](https://doi.org/10.1128/jb.176.4.953-958.1994), [PMC205144](https://pmc.ncbi.nlm.nih.gov/articles/PMC205144/).
+  - **Reports:** between repressed and derepressed conditions, transport affinity changes while the maximum rate stays constant.
+  - **Supports:** the idea that uptake kinetics depend on the cells' history. This is a candidate explanation for `004` failing at low sugar; untested.
+- **Diderich JA et al. (1999)**, already listed above. Transporter gene expression tracks the extracellular glucose concentration.
+
 ## Supporting discussion references (not model inputs)
 
 - [Oxygen dependence of metabolic fluxes and energy generation of S. cerevisiae CEN.PK113-1A](https://pmc.ncbi.nlm.nih.gov/articles/PMC2507709/): controlled oxygenation in glucose-limited cultures; supports changes in fermentation and biomass yield with oxygen availability. Different strain and continuous-culture conditions from Ji et al.; used qualitatively.

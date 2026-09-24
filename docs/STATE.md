@@ -62,9 +62,16 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Jakob reviews round 2 of the overflow increment (`explorations/003_with_yeast_extract.py`; [review](reviews/2026-09-24-overflow-repression.md)).
+Jakob reviews round 3 (`explorations/004_calibrated_ks.py`; [review](reviews/2026-09-24-overflow-repression.md)).
 
-- The carbon balance shows that Ji's 40 g/L yields need carbon beyond the glucose, and yeast extract plausibly supplies it.
-- Adding yeast extract to the model helps only slightly. The main misfit is that uptake slows too late (KS fixed at 0.1 g/L).
-- **Proposed next step (not agreed):** calibrate KS on the 40 g/L tail, justified by low-affinity transporters in high-glucose batch. This needs a source for their affinity values.
-- Do not tune the model to Figure 2.
+- The calibrated KS (8–14 g/L) matches the low-affinity transporters.
+- The test is now close at 10–40 g/L. At 1–5 g/L it fails in the opposite direction: the model makes too little ethanol.
+- Including repression makes low sugar worse.
+- The model is over-flexible: 7 parameters are calibrated on one run.
+
+**Agent's recommendation:** stop extending this model on this one dataset. Record what was learned, then decide whether to:
+
+1. find a second dataset with low-sugar time courses, or
+2. move on to the fed-batch question, where low sugar is the central regime and data will be needed anyway.
+
+Do not tune the model to Figure 2.
