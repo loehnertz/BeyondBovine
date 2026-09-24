@@ -139,6 +139,8 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 
 - Asked whether the cells visibly pause between glucose running out and ethanol starting to fall in Figure 1, he said "no visible pause". The agent's reading largely agreed: there is no clear plateau in the cell curve. At most there is a one- to two-point shoulder at the ethanol peak, which is within what the resolution and scatter allow. The dominant feature is the large drop in growth rate after the switch, not a delay.
 
+- Chose to model the Crabtree mechanism rather than one fixed condition: "model the mechanism, no? The Crabtree effect is real."
+
 **Explained, not independently demonstrated or accepted as a model:**
 
 - Growth rate, yield per gram of sugar, and total final yeast are different quantities. Abundant sugar can support fast growth with lower yield; a lower yield need not mean less total yeast.
@@ -158,6 +160,11 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - The paper's unusually high fitted growth-rate values still need cross-checking. Glucose-stage yield must not be treated as whole-run yield when ethanol is subsequently consumed.
 
 **Proposals awaiting agreement:**
+
+- **Bottleneck increment (proposed 2026-09-24):** an exploratory `explorations/002_…` using the respiratory-bottleneck idea (Sonnleitner & Käppeli 1986). Sugar uptake depends on the current sugar concentration. Respiration has a maximum capacity per cell, and uptake beyond that capacity overflows to ethanol at a lower yield. A sharp switch to slower ethanol growth follows once the glucose is gone.
+  - **Assumptions:** sufficient dissolved oxygen and nutrients, perfect mixing, no switch delay.
+  - **Parameters:** need research first, and the transfer between strains must be justified or labelled.
+  - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.
 - The agent recommended keeping nitrogen sufficient initially and considering nitrogen limitation later. Jakob has not accepted that scope or an implementation increment.
