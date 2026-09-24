@@ -38,7 +38,7 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 
 ## Topics
 
-### Step 1 — What happens when yeast grows on sugar? (essentially done)
+### Step 1 — What happens when yeast grows on sugar? (done)
 
 **Explained so far:**
 
@@ -62,6 +62,20 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - He explained that not all sugar becomes cells because of a loss, like friction or heat. This is partly right. The main reason is that some sugar must be burned for energy, so its carbon leaves as CO₂.
 - He later restated it: part of the sugar is consumed as fuel for the building process, and that part leaves as CO₂. This is correct. He also assumed that mitochondria build the new cell. The agent corrected this: mitochondria are the power plant that burns sugar into CO₂ and water and makes ATP, and building happens elsewhere in the cell.
 - He predicted *fewer* cells from the same sugar when yeast makes ethanol, because less energy is obtained per sugar. This is correct.
+
+- He restated the energy split: part of the sugar becomes ATP because building new cells needs ATP. This is right. The agent added one nuance: sugar is used directly as building material (its carbon), and ATP supplies the energy to assemble it.
+
+### Step 2 — How does a population of cells grow? (in progress)
+
+**Explained so far:**
+
+- Doubling means multiplying by 2 for each doubling time, so N = 2^(number of doublings).
+- The worked example: 12 doublings in 24 hours gives 4,096 cells.
+- Unlimited growth is impossible. Within about 10 days, one cell's descendants would outweigh the Earth. This is the agent's rough estimate, assuming a wet mass of about 60 picograms per cell.
+
+**Jakob's own statements:**
+
+- He recognised the growth as exponential and counted 12 doublings in 24 hours on his own. He was unsure whether the result is 2^12 or 12^2. The agent confirmed 2^12.
 
 <details>
 <summary>Withheld on purpose (for agents; spoiler for Jakob)</summary>

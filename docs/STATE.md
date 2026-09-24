@@ -41,8 +41,8 @@ Scientific learning has started; see [LEARNING.md](LEARNING.md) for what Jakob h
 
 **Steps:**
 
-1. What is a fermentation? What goes in and what comes out? (essentially done)
-2. How does a population of cells grow? This covers exponential growth and doubling time.
+1. What is a fermentation? What goes in and what comes out? (done)
+2. How does a population of cells grow? This covers exponential growth and doubling time. (in progress)
 3. Why does growth stop? This covers the yield: roughly a fixed amount of yeast per gram of sugar.
 4. A first simulator: yeast and sugar updated step by step in Python.
 5. Compare the simulator with real data.
