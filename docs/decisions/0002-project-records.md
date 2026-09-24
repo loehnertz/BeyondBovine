@@ -23,7 +23,7 @@ It must also preserve a fifth thing: what Jakob understands well enough to chall
 | `docs/decisions/` | History | One short record for each consequential decision, whether technical or scientific. |
 | `docs/model/` | Current state | The agreed model and its implementation status. |
 | `docs/reviews/` | History | End-of-increment notes: what was learned, chosen, and built, why the result is credible, and what is not yet understood or validated. |
-| `docs/sources.md` | Reference | References, each with a note on what it justifies and what its scope is. |
+| `docs/SOURCES.md` | Reference | References, each with a note on what it justifies and what its scope is. |
 
 Create folders and files only when they are first needed.
 
