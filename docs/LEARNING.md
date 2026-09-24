@@ -181,6 +181,22 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
     - **Consistency check:** recovery must not create a visible pause, because Figure 1 shows none.
     - **Proposed evidence split (awaiting Jakob's agreement):** calibrate only on Ji's 40 g/L time course (Figure 1). Predict the 1, 5, 10, and 25 g/L levels and compare them with Figure 2 without tuning. Repression is switchable, so the constant-threshold version remains available as a comparison.
     - **Next:** parameter research, including the repression and recovery rates.
+  - **Evidence split agreed by Jakob (2026-09-24):** calibrate on the 40 g/L run, test on 1, 5, 10, and 25 g/L, with repression switchable.
+  - **Parameter proposal (2026-09-24, awaiting acceptance):**
+    - **From literature, other strains:**
+      - respiratory yield 0.50 g/g (Postma)
+      - fermentative biomass yield ~0.10 g/g (Verduyn, anaerobic)
+      - glucose affinity ~0.1 g/L (Verduyn)
+      - initial overflow threshold ~0.8 g/g/h (inferred from Postma)
+    - **Derived:** ethanol ≤ 0.51 g/g (stoichiometry).
+    - **Calibrated on 40 g/L only:**
+      - maximum sugar uptake rate
+      - repression rate
+      - recovery rate
+      - repressed threshold floor
+      - ethanol-phase growth rate and yield
+    - **Identifiability risk:** one time course may not pin down both the repression and recovery rates.
+    - **Finding:** Ji's preculture (20 g/L glucose, late exponential) means the cells probably start repressed. The yield trend may then reflect *recovery* during low-sugar runs more than repression building up. This changes the explanation the model offers, and should be discussed.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.

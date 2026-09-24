@@ -13,6 +13,19 @@ Ji M, Miao Y, Chen JY, You Y, Liu F, Xu L. *Growth characteristics of freeze-tol
 - **Conditions:** one industrial strain (AFY); YPD-based medium with minerals and vitamins; 30 °C, pH 5.0; 1.2 L in a 3 L stirred tank; air 200 L/h; dissolved oxygen held at 20 % of saturation by varying stirrer speed; starting glucose 1, 5, 10, 25, and 40 g/L.
 - **Scope and caveats:** a single freeze-tolerant commercial strain, not a lab reference strain. The medium contains yeast extract and peptone, which are extra carbon and nitrogen beyond glucose. Biomass comes from an OD calibration. Its reported maximum growth rate (0.99 h⁻¹) looks high compared with commonly cited values for *S. cerevisiae* on glucose and needs cross-checking against a second source before any number is used in the model.
 
+- **Preculture (methods):** YPD with 20 g/L glucose, 21 h at 30 °C, harvested in late exponential phase, 5 % v/v inoculum. **Implication:** the cells very likely start the batch already glucose-repressed, whatever the starting glucose. The stated inoculum of "1.2 × 10⁷ viable cells per liter" is inconsistent with the ~0.2 g/L starting biomass in Figure 1. It is probably per mL, but this is unclarified.
+- **Figure 2 (agent's reading of a 360 px image, approximate ±0.01 g/g):** glucose-phase yields against starting glucose.
+
+  | Starting glucose (g/L) | Cell yield (g/g) | Ethanol yield (g/g) |
+  |---|---|---|
+  | 1 | 0.41 | 0.22 |
+  | 5 | 0.26 | 0.285 |
+  | 10 | 0.24 | 0.31 |
+  | 25 | 0.215 | 0.365 |
+  | 40 | 0.195–0.20 | 0.40 |
+
+  The endpoints match the text (0.41/0.22 and 0.20/0.40). Reserved as the independent test; do not fit to it.
+
 ## Malina et al. 2021 — machinery cost and the Crabtree effect
 
 *Adaptations in metabolism and protein translation give rise to the Crabtree effect in yeast.* PNAS 118(51), e2112836118. doi:[10.1073/pnas.2112836118](https://doi.org/10.1073/pnas.2112836118). [Author-hosted full text](https://backend.orbit.dtu.dk/ws/portalfiles/portal/269333976/e2112836118.full.pdf).
@@ -64,6 +77,13 @@ These sources were read to decide how to represent overflow. Agents read the abs
   - membrane-space competition (Zhuang et al. 2011, [PMC3159977](https://pmc.ncbi.nlm.nih.gov/articles/PMC3159977/), shown in *E. coli*)
   - a limit on Gibbs energy dissipation (Niebel et al. 2019)
 - **Access notes:** Sonnleitner & Käppeli 1986 is paywalled, and Unpaywall finds no legal open copy. Jakob asked about Sci-Hub; the agent declined because it infringes copyright. Legal routes are library access, author copies, and browser download of PMC PDFs.
+
+## Parameter candidates from other strains (abstracts read, 2026-09-24)
+
+- **Verduyn C, Postma E, Scheffers WA, van Dijken JP (1990).** *Physiology of Saccharomyces cerevisiae in anaerobic glucose-limited chemostat cultures.* Journal of General Microbiology 136, 395–403. doi:[10.1099/00221287-136-3-395](https://doi.org/10.1099/00221287-136-3-395). Strain CBS 8066, **anaerobic**. The abstract reports a maximum biomass yield of **0.10 g/g**, a Ks for glucose of **0.55 mM (≈ 0.1 g/L)**, and μmax 0.31 h⁻¹. **Candidate use:** the fermentative biomass yield, and the order of magnitude of how sugar uptake slows at low sugar. **Transfer caveat:** these are anaerobic values, whereas the overflow fraction in aerobic cells may differ. The strain also differs from AFY.
+- **Jones KD, Kompala DS (1999).** *Cybernetic model of the growth dynamics of Saccharomyces cerevisiae in batch and continuous cultures.* Journal of Biotechnology. doi:[10.1016/s0168-1656(99)00017-6](https://doi.org/10.1016/s0168-1656(99)00017-6). Their aerobic batch shows an **intermediate lag phase** between the glucose and ethanol phases. Ji's AFY shows no visible pause, so strains differ in how fast they switch. Paywalled; abstract only.
+- **Diderich JA et al. (1999).** *Glucose uptake kinetics and transcription of HXT genes in chemostat cultures of Saccharomyces cerevisiae.* Journal of Biological Chemistry 274, 15350–15359. doi:[10.1074/jbc.274.22.15350](https://doi.org/10.1074/jbc.274.22.15350). Transporter kinetics depend on growth conditions. This is background for why a single uptake affinity is a simplification. Abstract only.
+- **Ethanol per glucose, stoichiometric maximum:** C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂ gives 92/180 ≈ **0.51 g/g**. This is a derivation, not a measurement. The actual value is lower because some carbon goes to biomass.
 
 ## Supporting discussion references (not model inputs)
 
