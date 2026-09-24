@@ -1,0 +1,19 @@
+# Aerobic batch, 8 g/L glucose, strain H1022, DO > 20 %, 30 C, pH 5.
+# TRANSCRIBED FROM a secondary compilation: Moreno-Paz et al. 2022, SupData_Fermentation.xlsx, sheet Batch, paper 1,
+# labelled "Hanly 2011" (MIT licence). CAVEAT: Hanly & Henson 2011 (Biotechnol Bioeng, doi:10.1002/bit.22954) is a
+# modelling paper, so these values were taken from an earlier experiment that is not identified here. The medium
+# and preculture are unknown. Used ONLY as a test, never for calibration.
+# Units: h, g/L.
+t_h,glucose_g_per_L,cells_g_per_L,ethanol_g_per_L
+0,8,0.1,0
+1,7.5,0.1,1
+3,6.5,0.2,1.2
+4.5,4.7,0.5,1.6
+6,1.5,0.75,2.8
+7,0,1.2,3.1
+8,0,1.2,2.9
+9,0,1.25,2.8
+10,0,1.35,2.6
+11,0,1.5,2
+12,0,1.5,1.5
+13,0,2.2,1
