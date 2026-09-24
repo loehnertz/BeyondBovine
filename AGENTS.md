@@ -76,6 +76,8 @@ Start each session by reading `docs/STATE.md`. Then check the files and changes 
 - `docs/model/` describes the agreed model and flags where the implementation diverges from it. Never document a bug as intended behaviour.
 - Only Jakob can confirm that he understands or accepts something. An agent's explanation does not establish either.
 
+Commit directly to `master`. Do not open pull requests unless Jakob asks for one; he decided this on 2026-09-24.
+
 ## Session continuity
 
 Keep lightweight records of accepted decisions, sources, limitations, and unresolved questions. Distinguish an accepted project choice from an agent suggestion and from an external scientific finding.

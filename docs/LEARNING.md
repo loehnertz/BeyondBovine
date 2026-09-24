@@ -38,7 +38,7 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 
 ## Topics
 
-### Step 1 — What happens when yeast grows on sugar? (in progress)
+### Step 1 — What happens when yeast grows on sugar? (essentially done)
 
 **Explained so far:**
 
@@ -59,7 +59,8 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 
 - He predicted that sugar is used as food and energy for multiplying. This is right; it misses the building-material role.
 - He summarised: "sugar in, yeast out, and CO₂ and water out as well". The agent confirmed this for respiration and added heat.
-- He explained that not all sugar becomes cells because of a loss, like friction or heat. This is partly right. The main reason is that some sugar must be burned for energy, so its carbon leaves as CO₂. The agent explained this, and Jakob has not yet restated it.
+- He explained that not all sugar becomes cells because of a loss, like friction or heat. This is partly right. The main reason is that some sugar must be burned for energy, so its carbon leaves as CO₂.
+- He later restated it: part of the sugar is consumed as fuel for the building process, and that part leaves as CO₂. This is correct. He also assumed that mitochondria build the new cell. The agent corrected this: mitochondria are the power plant that burns sugar into CO₂ and water and makes ATP, and building happens elsewhere in the cell.
 - He predicted *fewer* cells from the same sugar when yeast makes ethanol, because less energy is obtained per sugar. This is correct.
 
 <details>
