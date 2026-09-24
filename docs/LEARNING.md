@@ -170,6 +170,11 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
     - Postma et al. dispute that limited respiratory capacity is the *cause*. The agent therefore proposed a mechanism-neutral framing: a threshold on the sugar uptake rate, above which the excess goes to ethanol. This uses the same mathematics without claiming why the threshold exists. It awaits Jakob's decision.
     - Parameters still missing: the maximum uptake rate, and how uptake slows at low sugar.
     - Ji's Figure 2 must not be used for fitting, because it is the independent test.
+  - **Mechanism research (2026-09-24):** Jakob asked how overflow actually works in *S. cerevisiae*. The open literature (see `SOURCES.md`) indicates:
+    - **Established:** ethanol production rises with the sugar uptake rate above a strain-dependent threshold. Slowing uptake genetically makes *S. cerevisiae* fully respiratory even at high glucose (Otterstedt 2004).
+    - **S. cerevisiae specifically:** besides the immediate short-term effect, high glucose *represses* respiratory machinery over time (the long-term effect, or glucose repression). The threshold may therefore not be constant during a batch.
+    - **Unsettled:** *why* the threshold exists. Four competing explanations are recorded in `SOURCES.md`.
+    - **Agent recommendation:** first model a constant uptake threshold and test it against Ji's Figure 2. If the steep yield drop is not reproduced, glucose repression becomes the prime candidate for the next increment. This awaits Jakob's decision.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.
