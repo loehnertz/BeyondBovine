@@ -1,6 +1,6 @@
 # Working on BeyondBovine
 
-Read `PROJECT_BRIEF.md` before proposing substantial work. This file is the working agreement for agents collaborating with Jakob. It is not an implementation specification.
+Read `docs/IDEA.md` before proposing substantial work. This file is the working agreement for agents collaborating with Jakob. It is not an implementation specification.
 
 ## Governing principle
 
