@@ -42,8 +42,8 @@ Scientific learning has started; see [LEARNING.md](LEARNING.md) for what Jakob h
 **Steps:**
 
 1. What is a fermentation? What goes in and what comes out? (done)
-2. How does a population of cells grow? This covers exponential growth and doubling time. (in progress)
-3. Why does growth stop? This covers the yield: roughly a fixed amount of yeast per gram of sugar.
+2. How does a population of cells grow? This covers exponential growth and doubling time. (done)
+3. Why does growth stop? This covers the yield: roughly a fixed amount of yeast per gram of sugar. (in progress)
 4. A first simulator: yeast and sugar updated step by step in Python.
 5. Compare the simulator with real data.
 
@@ -59,4 +59,4 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Step 2 in [LEARNING.md](LEARNING.md): how a population of cells grows. Build nothing until an increment is agreed.
+Step 3 in [LEARNING.md](LEARNING.md): why growth stops, and the yield. Build nothing until an increment is agreed.

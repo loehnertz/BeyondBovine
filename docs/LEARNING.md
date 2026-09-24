@@ -65,7 +65,7 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 
 - He restated the energy split: part of the sugar becomes ATP because building new cells needs ATP. This is right. The agent added one nuance: sugar is used directly as building material (its carbon), and ATP supplies the energy to assemble it.
 
-### Step 2 — How does a population of cells grow? (in progress)
+### Step 2 — How does a population of cells grow? (done)
 
 **Explained so far:**
 
@@ -76,6 +76,16 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 **Jakob's own statements:**
 
 - He recognised the growth as exponential and counted 12 doublings in 24 hours on his own. He was unsure whether the result is 2^12 or 12^2. The agent confirmed 2^12.
+- Asked to write the growth as one line of code, he asked the agent to show it. The agent built it up: `cells = N0 * 2 ** (t / td)`. Jakob has not yet stated it himself, so revisit it lightly later.
+- He said exponential growth stops because the sugar runs out. This is right for a simple batch. The agent added other possible limiting factors: oxygen, other nutrients, and toxic by-products such as ethanol.
+
+### Step 3 — Why does growth stop, and how much yeast results? (in progress)
+
+**Explained so far:**
+
+- The limiting factor is whatever runs out first.
+- Yield is roughly a fixed amount of yeast per gram of sugar: about 0.5 g/g with plenty of oxygen. The value is approximate and not yet sourced.
+- Worked example: 20 g of sugar gives about 10 g of yeast.
 
 <details>
 <summary>Withheld on purpose (for agents; spoiler for Jakob)</summary>
