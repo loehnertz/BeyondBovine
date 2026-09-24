@@ -106,11 +106,18 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - In the last doubling time, the yeast eats as much sugar as in all earlier doublings combined.
 - The simple model stops abruptly when the sugar runs out. Real cultures bend more smoothly; why is a later question.
 
-**Proposed increment (awaiting agreement):**
+**Increment (agreed: the agent writes it, Jakob reviews it; built 2026-09-24):**
 
 - An exploratory loop in `explorations/` that tracks yeast and sugar.
 - Illustrative numbers, not sourced: doubling time 2 h, yield 0.5 g/g, 20 g sugar, 0.1 g of yeast at the start.
 - Independent checks: the final yeast should be about 10.1 g, and the sugar should run out after about 13 h.
+
+- `explorations/001_batch_growth.py` is built and runs. Both independent checks match: 10.10 g of final yeast, and the sugar is gone at 13.32 h. Jakob's review of the code is pending.
+
+**Side questions answered:**
+
+- **What happens when the sugar runs out?** Yeast doesn't die immediately. It enters the **stationary phase**: it stops dividing, lives on internal reserves, and becomes more stress-resistant. It can survive for a long time, and it resumes growing after a delay if sugar is added. The classic batch phases are **lag, exponential, stationary, and death**. Dried baker's yeast is an extreme form of this dormancy.
+- **Logarithmic versus exponential:** the logarithm is the inverse of the exponential. It answers "how many doublings to get this big?": log₂(4096) = 12. Logarithmic growth gets slower and slower. On a log-scale plot, exponential growth becomes a straight line.
 
 <details>
 <summary>Withheld on purpose (for agents; spoiler for Jakob)</summary>
