@@ -79,13 +79,20 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - Asked to write the growth as one line of code, he asked the agent to show it. The agent built it up: `cells = N0 * 2 ** (t / td)`. Jakob has not yet stated it himself, so revisit it lightly later.
 - He said exponential growth stops because the sugar runs out. This is right for a simple batch. The agent added other possible limiting factors: oxygen, other nutrients, and toxic by-products such as ethanol.
 
-### Step 3 — Why does growth stop, and how much yeast results? (in progress)
+### Step 3 — Why does growth stop, and how much yeast results? (done)
 
 **Explained so far:**
 
 - The limiting factor is whatever runs out first.
 - Yield is roughly a fixed amount of yeast per gram of sugar: about 0.5 g/g with plenty of oxygen. The value is approximate and not yet sourced.
 - Worked example: 20 g of sugar gives about 10 g of yeast.
+- Two independent dials: speed (doubling time) sets *when*, and sugar × yield sets *how much*. The agent said reality has a twist here, to come in step 5; this is the withheld surprise.
+
+**Jakob's own statements:**
+
+- He said the growth formula makes sense once he saw it.
+- He predicted that twice-as-fast growth gives the same final amount of yeast, reached sooner. He hesitated towards "less". The same amount is correct for the simple model.
+- He asked why yeast makes ethanol if ethanol is toxic to it. The agent's partial answer: without oxygen, ethanol is the only way to get energy, and yeast tolerates ethanol better than its competitors. The fuller evolutionary answer is parked because it touches the withheld surprise.
 
 <details>
 <summary>Withheld on purpose (for agents; spoiler for Jakob)</summary>
@@ -96,3 +103,4 @@ Yeast also makes ethanol *with* plenty of oxygen, when sugar is abundant. This i
 ## Parked questions
 
 - **Why is ethanol, specifically, the product when yeast ferments?** Jakob suspects a chemical logic and is right. It needs some groundwork on how sugar is broken down. (Raised 2026-09-24.)
+- **Why does yeast make ethanol if it harms the yeast itself?** This is the evolutionary angle. Answer it together with the chemistry question above, after the step 5 surprise. Parts of the explanation are debated, so use sources. (Raised 2026-09-24.)
