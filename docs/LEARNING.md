@@ -204,6 +204,11 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
     - the fixed literature yields cannot reproduce Ji's measured yield pairs, whatever the model structure
 
     Jakob has not yet reviewed these results.
+  - **Round 2 (2026-09-24):** asked what the agent would do, Jakob agreed to investigate yeast extract first.
+    - The carbon balance supports extra carbon.
+    - The model with yeast extract (`003`) improved cell yields only slightly and made ethanol overshoot.
+    - The main misfit is the glucose tail (uptake kinetics).
+    - Next proposal: calibrate KS. Not yet agreed.
   - **Independent test:** whether Ji's Figure 2 trend (lower yield at higher starting sugar, dropping steeply between 1 and 5 g/L) emerges without fitting. Failure would be a finding, not a reason to tune.
 
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.

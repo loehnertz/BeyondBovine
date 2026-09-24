@@ -62,4 +62,9 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Jakob reviews the result of `002_overflow_repression` ([review](reviews/2026-09-24-overflow-repression.md)). The model reproduces the trend's direction but not its magnitude, and the fixed literature yields cannot match Ji's yield pairs. Decide which explanation to investigate first: extra carbon from the medium, aerobic fermentative yield, strain, or measurement. Do not tune the model to Figure 2.
+Jakob reviews round 2 of the overflow increment (`explorations/003_with_yeast_extract.py`; [review](reviews/2026-09-24-overflow-repression.md)).
+
+- The carbon balance shows that Ji's 40 g/L yields need carbon beyond the glucose, and yeast extract plausibly supplies it.
+- Adding yeast extract to the model helps only slightly. The main misfit is that uptake slows too late (KS fixed at 0.1 g/L).
+- **Proposed next step (not agreed):** calibrate KS on the 40 g/L tail, justified by low-affinity transporters in high-glucose batch. This needs a source for their affinity values.
+- Do not tune the model to Figure 2.

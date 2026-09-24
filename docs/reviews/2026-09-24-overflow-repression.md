@@ -52,3 +52,25 @@ The code matches the stated model, and the calibrated run reproduces the data ro
 - KR, KE and K_REP are unsourced.
 - Ethanol evaporation under strong aeration (200 L/h into 1.2 L) is ignored. It would make the measured ethanol *lower* than what was produced.
 - **Next decision (Jakob):** which explanation to investigate first. No explanation should be patched into the model without evidence.
+
+## Round 2: yeast extract as a second carbon source (`explorations/003_with_yeast_extract.py`)
+
+**Carbon balance (chemistry only, no model).** Carbon fractions:
+
+- glucose 0.400 (exact)
+- ethanol 0.522 (exact)
+- biomass 0.488 (assumed composition CH1.8O0.5N0.2)
+- yeast extract 0.43 g C/g (Schröder-Kleeberg et al. 2025, Table A2)
+
+At 40 g/L, Ji's cells plus ethanol, plus the unavoidable CO₂ released as ethanol forms, need **0.411 g C per g glucose**. The glucose supplies only **0.400**, and that is before any respiration. Yeast extract (0.22 g per g glucose in Ji's Table 1) supplies about **0.096 g C per g glucose** more. So some biomass very likely comes from yeast extract, or the measurements are biased. The extra cells per g of yeast extract needed to close the gap are about 0.06–0.25 at 5–40 g/L. That is consistent with a single value within the reading error. At 1 g/L it would take 0.53, which makes that point the outlier again.
+
+**Model.** Yeast extract is co-consumed with glucose in the medium's ratio. It adds cells at a yield calibrated on 40 g/L only: 0.18–0.27 g cells per g yeast extract, in line with the carbon balance.
+
+**Result.**
+- **Cell yields:** slightly better. At 1 g/L the model gives 0.27 (Ji: 0.41); at 40 g/L it gives 0.16 (Ji: 0.20).
+- **Ethanol yields:** now overshoot everywhere.
+- **Parameters:** the fit pushes the repressed threshold to 0, so repressed cells ferment everything above the respiration they have left.
+
+**What the result shows.** Yeast extract is real, but it is not the main problem. The dominant misfit is visible in the 40 g/L glucose panel. The model's glucose runs out abruptly at about 7.4 h. The data show a tail of 9.8 g/L at 7 h, 2.3 g/L at 8 h and 1.0 g/L at 9 h, and during that tail the cells grow from 6 to 8.75 g/L. Because the model cannot slow uptake at a few g/L of glucose, this growth is counted as the ethanol phase. That distorts the glucose-phase yields and keeps overflow going at low starting sugar.
+
+**Candidate next step (not agreed):** calibrate KS, the sugar level at which uptake is half its maximum, on the 40 g/L tail instead of fixing it at 0.1 g/L. The justification is that Verduyn's value comes from glucose-limited chemostats, where high-affinity transporters dominate. In a high-glucose batch, low-affinity transporters dominate (Diderich et al. 1999). A source for their affinity values is still needed.

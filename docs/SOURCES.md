@@ -86,6 +86,16 @@ These sources were read to decide how to represent overflow. Agents read the abs
 - **Diderich JA et al. (1999).** *Glucose uptake kinetics and transcription of HXT genes in chemostat cultures of Saccharomyces cerevisiae.* Journal of Biological Chemistry 274, 15350–15359. doi:[10.1074/jbc.274.22.15350](https://doi.org/10.1074/jbc.274.22.15350). Transporter kinetics depend on growth conditions. This is background for why a single uptake affinity is a simplification. Abstract only.
 - **Ethanol per glucose, stoichiometric maximum:** C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂ gives 92/180 ≈ **0.51 g/g**. This is a derivation, not a measurement. The actual value is lower because some carbon goes to biomass.
 
+## Yeast extract composition (read 2026-09-24)
+
+- **Schröder-Kleeberg F et al. (2025).** *Modelling of Escherichia coli batch and fed-batch processes in semi-defined yeast extract media.* Bioengineering 12, 1081. doi:[10.3390/bioengineering12101081](https://doi.org/10.3390/bioengineering12101081), [PMC12561460](https://pmc.ncbi.nlm.nih.gov/articles/PMC12561460/).
+  - **Used:** the carbon content of yeast extract, 0.036 mol C/g, which is about 0.43 g C/g (their Table A2 constant).
+  - **Useful context:** they model yeast extract as fractions that are consumed quickly and slowly.
+  - **Scope:** *E. coli*; their biomass yields on yeast extract are not transferred.
+- **Tao Z et al. (2023).** *Yeast Extract: Characteristics, Production, Applications and Future Perspectives.* J Microbiol Biotechnol 33, 151–166. [PMC9998214](https://pmc.ncbi.nlm.nih.gov/articles/PMC9998214/).
+  - **Used:** context only. One extract reported 64 % protein (dry weight), 1.3 % fat and 4 % RNA. It is low in carbohydrate and rich in amino acids.
+  - **Scope:** composition varies strongly between extracts and processes.
+
 ## Supporting discussion references (not model inputs)
 
 - [Oxygen dependence of metabolic fluxes and energy generation of S. cerevisiae CEN.PK113-1A](https://pmc.ncbi.nlm.nih.gov/articles/PMC2507709/): controlled oxygenation in glucose-limited cultures; supports changes in fermentation and biomass yield with oxygen availability. Different strain and continuous-culture conditions from Ji et al.; used qualitatively.

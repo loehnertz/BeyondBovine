@@ -1,0 +1,21 @@
+Calibrated on 40 g/L only:
+  repression+YE, KR=0.1    qs_max=2.96 qcrit_min=0.00 k_rec=20.00 qe_max=0.19 y_xe=0.31 y_xye=0.24
+  repression+YE, KR=0.5    qs_max=3.02 qcrit_min=0.00 k_rec=9.88 qe_max=0.18 y_xe=0.32 y_xye=0.19
+  repression+YE, KR=2.0    qs_max=3.03 qcrit_min=0.00 k_rec=2.97 qe_max=0.18 y_xe=0.33 y_xye=0.18
+  constant+YE              qs_max=2.92 qcrit_min=0.00 k_rec=4.88 qe_max=0.20 y_xe=0.31 y_xye=0.27
+  repression, no YE (002)  qs_max=3.28 qcrit_min=0.19 k_rec=20.00 qe_max=0.17 y_xe=0.41 y_xye=0.00
+
+Test: glucose-phase cell yield (g/g), model vs Ji Fig. 2
+  S0      Ji   repression+YE, KR=0.1   repression+YE, KR=0.5   repression+YE, KR=2.0             constant+YE  repression, no YE (002
+    1   0.41                    0.26                    0.27                    0.26                    0.17                    0.24  
+    5   0.26                    0.20                    0.22                    0.22                    0.16                    0.19  
+   10   0.24                    0.18                    0.19                    0.20                    0.16                    0.18  
+   25   0.21                    0.17                    0.17                    0.17                    0.16                    0.16  
+   40   0.20                    0.16                    0.16                    0.16                    0.16                    0.15  (calib.)
+
+Test: glucose-phase ethanol yield (g/g)
+    1   0.22                    0.31                    0.28                    0.29                    0.40                    0.28
+    5   0.28                    0.39                    0.36                    0.35                    0.43                    0.34
+   10   0.31                    0.41                    0.38                    0.37                    0.44                    0.36
+   25   0.36                    0.43                    0.41                    0.41                    0.44                    0.38
+   40   0.40                    0.44                    0.42                    0.42                    0.44                    0.39
