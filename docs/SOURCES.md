@@ -128,6 +128,18 @@ These sources were read to decide how to represent overflow. Agents read the abs
       - at the onset, glucose uptake is about 3.4 mmol/g/h, or **0.61 g/g/h**
     - **Postma chemostat:** residual glucose is only about 0.1 (unit to be verified) at D = 0.25–0.33 while the cells respire fully. Derepressed cells therefore take up glucose efficiently at very low concentrations. Uptake is high-affinity, the opposite of the KS ≈ 10 g/L fitted to Ji's batch.
 
+## Low-sugar batch data search (2026-09-25): no suitable open dataset found
+
+- **What was looked for:** aerobic *S. cerevisiae* batches starting at about 1–10 g/L glucose, with dense early sampling, a known preculture, a defined medium, and openly available data. The search used Europe PMC open-access full-text queries.
+- **Candidates checked and why they do not fit:**
+  - Hybrid-modelling mini-bioreactor study, 2025 ([PMC12511178](https://pmc.ncbi.nlm.nih.gov/articles/PMC12511178/)): industrial baker's strain, but no data deposited ("No data sets were generated or analysed").
+  - Proteome dynamics at glucose exhaustion, 2023 ([PMC10227427](https://pmc.ncbi.nlm.nih.gov/articles/PMC10227427/)): well controlled, but standard starting glucose, and the deposited data are proteomics.
+  - Biosensor bioprocess study, 2021 ([PMC8776715](https://pmc.ncbi.nlm.nih.gov/articles/PMC8776715/)): standard glucose levels.
+- **Observation (agent's inference):** physiology studies almost always start batches at about 20 g/L glucose. Low-start batches from a repressed inoculum are rarely published with open data.
+- **Remaining routes, not yet tried:**
+  - full texts of classic papers through Jakob's browser, since PMC PDFs are CAPTCHA-blocked from the cloud
+  - asking authors for data
+
 ## Supporting discussion references (not model inputs)
 
 - [Oxygen dependence of metabolic fluxes and energy generation of S. cerevisiae CEN.PK113-1A](https://pmc.ncbi.nlm.nih.gov/articles/PMC2507709/): controlled oxygenation in glucose-limited cultures; supports changes in fermentation and biomass yield with oxygen availability. Different strain and continuous-culture conditions from Ji et al.; used qualitatively.
