@@ -240,6 +240,16 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 
 The model as it stands is described in [model/batch-overflow.md](model/batch-overflow.md).
 
+### Next goal — fed-batch (started 2026-09-25)
+
+- Jakob accepted the reframing that fed-batch mostly runs adapted cells at low sugar, which is closer to the chemostat. The low-sugar batch transient stays open.
+- **Prediction (the exponential-feed question deferred since the start):** Jakob said oxygen demand grows exponentially with the cells until it outruns what the vessel can supply ("even a whole room wouldn't supply enough"). **Correct.** The agent added:
+  - once supply falls short, dissolved oxygen falls to near zero
+  - cells can no longer respire all the sugar, so they ferment: CO₂ out exceeds O₂ in, and the yield falls
+  - the late phase of the fed-batch dataset shows exactly that signature
+  - a bigger vessel does not automatically supply more oxygen per litre, which is a scale-up issue for later
+  - the standard fix is to stop increasing the feed at the oxygen limit
+
 ## Parked questions
 
 - **Why is ethanol, specifically, the product when yeast ferments?** Jakob suspects a chemical logic and is right. It needs some groundwork on how sugar is broken down. (Raised 2026-09-24.)
