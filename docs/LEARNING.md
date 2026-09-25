@@ -256,6 +256,11 @@ The model as it stands is described in [model/batch-overflow.md](model/batch-ove
   - Biomass is about 30 % low mid-run, unresolved.
   - See [the review](reviews/2026-09-25-fed-batch.md).
 
+- **Cell-level oxygen limit (2026-09-25):**
+  - Jakob asked for other papers instead of emailing the authors. Jouhten et al. 2008 was found: a chemostat with 5 oxygen levels.
+  - The test with nothing fitted confirmed the agent's pre-run expectation: the model is good when fully aerobic and fully anaerobic, and about 2× too much ethanol when oxygen-limited.
+  - Lesson: fermenting while some oxygen is present yields more cells (implied 0.13–0.18 against 0.10). A plausible reason is the glycerol/redox cost that only applies without oxygen.
+
 ## Parked questions
 
 - **Why is ethanol, specifically, the product when yeast ferments?** Jakob suspects a chemical logic and is right. It needs some groundwork on how sugar is broken down. (Raised 2026-09-24.)

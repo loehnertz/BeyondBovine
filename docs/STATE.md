@@ -63,6 +63,10 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Jakob reviews the fed-batch prediction (`explorations/007_fed_batch.py`; [review](reviews/2026-09-25-fed-batch.md)). With nothing fitted, gas exchange is predicted well from 20 to 97 h. The late phase shows fermentation with falling oxygen uptake, but an undocumented process change confounds it.
+Jakob reviews the cell-level oxygen limit (`explorations/008_oxygen_limited_cells.py`; [review](reviews/2026-09-25-oxygen-limited-cells.md)).
 
-**Candidate next step (not agreed):** an oxygen-supply limit, which is the original fed-batch question. It needs either a sourced oxygen-transfer capacity or a cleaner dataset. Setting the ceiling from the same late phase would be calibration, not a test.
+- Fully aerobic and fully anaerobic conditions are predicted well.
+- Oxygen-limited conditions are not: about 2× too much ethanol and too little biomass.
+- The implied fermentative yield when some oxygen is present is 0.13–0.18 g/g, against 0.10 without oxygen.
+
+**Candidate next step (not agreed):** calibrate that yield on Jouhten, then test it on Ji Figure 2 and the fed-batch. After that, the vessel oxygen-supply part, which remains exploratory.
