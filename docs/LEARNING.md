@@ -124,7 +124,7 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - **What happens when the sugar runs out?** **Correction from step 5:** growth need not stop if another usable carbon source remains and conditions permit its use. The earlier explanation below assumed no such source. Yeast doesn't die immediately. It enters the **stationary phase**: it stops dividing, lives on internal reserves, and becomes more stress-resistant. It can survive for a long time, and it resumes growing after a delay if sugar is added. The classic batch phases are **lag, exponential, stationary, and death**. Dried baker's yeast is an extreme form of this dormancy.
 - **Logarithmic versus exponential:** the logarithm is the inverse of the exponential. It answers "how many doublings to get this big?": log₂(4096) = 12. Logarithmic growth gets slower and slower. On a log-scale plot, exponential growth becomes a straight line.
 
-### Step 5 — Comparing with real growth (in progress, 2026-09-24)
+### Step 5 — Comparing with real growth (consolidated 2026-09-25; low-sugar gap open)
 
 **Jakob's own statements and review:**
 
@@ -225,6 +225,20 @@ The first goal is to understand, predict, and simulate a **batch culture**: yeas
 - Explore a two-stage glucose/ethanol model under sufficient oxygen and other nutrients. A sharp switch would be an explicit simplification; a dynamic adaptation mechanism would need evidence and a defined purpose.
 - The agent recommended keeping nitrogen sufficient initially and considering nitrogen limitation later. Jakob has not accepted that scope or an implementation increment.
 - No simulator code or accepted scientific model changed during this session.
+
+### Step 5 — consolidation (2026-09-25)
+
+**Agent's summary of what step 5 taught. Jakob has not yet confirmed it; ask him to challenge or restate it.**
+
+1. **Overflow (the Crabtree effect).** Above a certain sugar uptake rate, yeast sends the excess to ethanol even with oxygen present. The trigger is *how fast* sugar flows in; why the threshold exists is still debated.
+2. **Glucose repression.** High sugar switches off respiratory machinery. Cells carry a history, so the starting culture matters.
+3. **Uptake kinetics.** KS is the half-speed sugar level. Yeast changes its transporters with its situation: low-affinity at high sugar (KS ≈ 10 g/L) and high-affinity at low sugar (KS ≈ 0.3 g/L).
+4. **Chemostat versus batch.** A chemostat holds growth steady at low sugar, which reveals clean thresholds. A batch sweeps through changing conditions. The same yeast can look different in each.
+5. **Complex media.** Yeast extract adds carbon. A carbon balance showed Ji's yields were impossible from glucose alone.
+6. **Method.** Keep calibration and test data apart. Never tune to the test. Distrust transferred parameters, as KS = 0.1 g/L showed. A failed prediction is information. Each added parameter makes a good fit mean less.
+7. **Where it stands.** The model works for 10–40 g/L batches and for the chemostat. It fails at low starting sugar, and that is exactly the fed-batch regime, so better low-sugar data come first.
+
+The model as it stands is described in [model/batch-overflow.md](model/batch-overflow.md).
 
 ## Parked questions
 

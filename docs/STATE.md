@@ -13,7 +13,8 @@ This file is a navigation aid. See [decision 0002](decisions/0002-project-record
 - **Sources:** `docs/SOURCES.md`. Ji et al. Figure 1 has now been reviewed qualitatively with Jakob; supporting mechanism references and limitations are recorded there. No parameters have been adopted.
 - **Exploration:** `explorations/001_batch_growth.py`. This is an exploratory toy batch model and not the engine. Jakob has reviewed the loop (see LEARNING.md, step 4).
 - **Exploration:** `explorations/002_overflow_repression.py`, an overflow model with glucose repression calibrated on Ji et al. 40 g/L. Its test failed on magnitude; see [the review](reviews/2026-09-24-overflow-repression.md). Jakob has not yet reviewed it.
-- **No engine code and no agreed model yet.**
+- **Model description:** [model/batch-overflow.md](model/batch-overflow.md). It is exploratory, with reference implementation `005`. It is supported for 10–40 g/L batch cultures and for the chemostat. It is not supported for low starting sugar.
+- **No engine code yet.**
 
 ## Jakob has reviewed and decided
 
@@ -62,10 +63,14 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Jakob reviews round 5 (`explorations/006_two_states.py`; [review](reviews/2026-09-24-overflow-repression.md)).
+Step 5 is consolidated: see the model description and the step 5 summary in `LEARNING.md`, which Jakob has not yet confirmed.
 
-- The two-state hypothesis did not fix the low-sugar under-prediction, so it is falsified as implemented.
-- After five rounds, the model fits chemostat data and 10–40 g/L batch data, but not low starting sugar.
-- The low-sugar evidence itself has weaknesses: possible preculture carry-over at 1 g/L, and an unidentified source for the 8 g/L batch.
+**Next:** a deliberate search for low-sugar batch data. The criteria are:
 
-**Agent's recommendation:** stop adding mechanism. Consolidate what step 5 taught, and treat better low-sugar batch data as the prerequisite for the next model change. Do not tune the model to the test data.
+- starting glucose of about 1–10 g/L
+- dense sampling early in the run
+- a known preculture
+- a defined medium
+- a strain close to the calibration strains
+
+Only after that should the model be changed. Do not tune the model to the test data.
