@@ -63,14 +63,6 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Step 5 is consolidated: see the model description and the step 5 summary in `LEARNING.md`, which Jakob has not yet confirmed.
+Jakob reviews the fed-batch prediction (`explorations/007_fed_batch.py`; [review](reviews/2026-09-25-fed-batch.md)). With nothing fitted, gas exchange is predicted well from 20 to 97 h. The late phase shows fermentation with falling oxygen uptake, but an undocumented process change confounds it.
 
-**Next:** a deliberate search for low-sugar batch data. The criteria are:
-
-- starting glucose of about 1–10 g/L
-- dense sampling early in the run
-- a known preculture
-- a defined medium
-- a strain close to the calibration strains
-
-Only after that should the model be changed. Do not tune the model to the test data.
+**Candidate next step (not agreed):** an oxygen-supply limit, which is the original fed-batch question. It needs either a sourced oxygen-transfer capacity or a cleaner dataset. Setting the ceiling from the same late phase would be calibration, not a test.

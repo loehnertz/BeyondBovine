@@ -1,0 +1,24 @@
+Route stoichiometry (mmol O2, mmol CO2 per mmol substrate), derived:
+  resp  O2 2.31  CO2 2.48
+  ferm  O2 0.00  CO2 1.75
+  etoh  O2 2.35  CO2 1.38
+  check vs van Hoek chemostat (respiratory, D=0.1-0.25): O2/glucose ~2.3, CO2/glucose ~2.5
+
+Feed: F0 = 0.239 g/h at t = 4.0 h, growing at 0.05/h (design rule, not reported)
+
+Base case (inoculum 0.05 g/kg, starts repressed): final volume 1.98 kg
+Test: biomass (g/kg), model range over inoculum/start state vs data
+  t=  20.5 h  model   2.42-  2.62   data   3.50
+  t=  44.3 h  model   8.22-  8.41   data  11.59
+  t=  70.4 h  model  25.54- 25.69   data  36.73
+  t=  95.8 h  model  55.82- 55.91   data  64.54
+  t= 118.0 h  model  80.47- 80.52   data  82.19
+Test: OUR and CPR (mmol/kg/h), base model vs data (1 h averages)
+  t=  10 h  OUR    11.9 vs    13.9   CPR    10.6 vs    11.2   RQ 0.90 vs 0.80
+  t=  15 h  OUR     3.2 vs     0.9   CPR     3.2 vs     1.8   RQ 1.00 vs 1.86
+  t=  25 h  OUR     5.1 vs     4.5   CPR     5.2 vs     6.4   RQ 1.01 vs 1.43
+  t=  45 h  OUR    13.2 vs    12.7   CPR    13.4 vs    15.4   RQ 1.01 vs 1.21
+  t=  70 h  OUR    37.9 vs    52.2   CPR    38.5 vs    55.0   RQ 1.01 vs 1.05
+  t=  98 h  OUR    87.6 vs    84.7   CPR    88.9 vs    86.2   RQ 1.01 vs 1.02
+  t= 105 h  OUR   100.4 vs   152.8   CPR   101.7 vs   150.3   RQ 1.01 vs 0.98
+  t= 115 h  OUR   116.2 vs    96.5   CPR   117.8 vs   126.8   RQ 1.01 vs 1.31

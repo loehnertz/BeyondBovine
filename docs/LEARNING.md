@@ -250,6 +250,12 @@ The model as it stands is described in [model/batch-overflow.md](model/batch-ove
   - a bigger vessel does not automatically supply more oxygen per litre, which is a scale-up issue for later
   - the standard fix is to stop increasing the feed at the oxygen limit
 
+- **Fed-batch prediction (2026-09-25):** Jakob agreed to build it without an oxygen limit.
+  - Gas exchange is well predicted from 20 to 97 h, with nothing fitted.
+  - The late phase shows the predicted fermentation signature, confounded by a process change.
+  - Biomass is about 30 % low mid-run, unresolved.
+  - See [the review](reviews/2026-09-25-fed-batch.md).
+
 ## Parked questions
 
 - **Why is ethanol, specifically, the product when yeast ferments?** Jakob suspects a chemical logic and is right. It needs some groundwork on how sugar is broken down. (Raised 2026-09-24.)
