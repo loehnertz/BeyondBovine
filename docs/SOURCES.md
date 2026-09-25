@@ -128,6 +128,22 @@ These sources were read to decide how to represent overflow. Agents read the abs
       - at the onset, glucose uptake is about 3.4 mmol/g/h, or **0.61 g/g/h**
     - **Postma chemostat:** residual glucose is only about 0.1 (unit to be verified) at D = 0.25–0.33 while the cells respire fully. Derepressed cells therefore take up glucose efficiently at very low concentrations. Uptake is high-affinity, the opposite of the KS ≈ 10 g/L fitted to Ji's batch.
 
+## Fed-batch dataset (Moreno-Paz et al. 2022, own experiment; read 2026-09-25)
+
+- **Where:** sheet `Fed-batch` of `SupData_Fermentation.xlsx` (MIT licence). The methods are in their Appendix S1, obtained from Europe PMC's supplementary files.
+- **Strain:** CEN.PK113-7D, a lab strain, different from both calibration strains.
+- **Vessel and conditions:** 1 L working volume (DASGIP), pH 5.1, 30 °C.
+- **Batch phase:** 400 g of medium with 2.5 g/kg glucose, defined mineral medium (Verduyn 1992).
+- **Feed:** exponential, started after 4 h, designed for a growth rate of 0.05 h⁻¹. The feed contains 209 g/kg glucose **and 7.67 g/kg ethanol**, in a defined medium.
+- **Measured:**
+  - OUR and CPR (volumetric, mmol/kg/h) from off-gas analysis, about every 2 min for about 120 h
+  - biomass 5 times, from 3.5 g/kg at 20 h to 82 g/kg at 118 h
+- **Not stated:** inoculum size, initial feed rate, feed end time, and whether oxygen became limiting.
+- **First look (agent):**
+  - OUR peaks near 10 h (batch), dips around 15 h (the transition to the feed), then rises roughly exponentially to about 150 mmol/kg/h near 107 h, and then falls.
+  - The CO₂/O₂ ratio is mostly about 1.0–1.2 but reaches about 1.3 late. This could mean some fermentation, for example from oxygen limitation at very high cell density. Untested.
+- **Relevance:** it covers a batch phase, the feed-start transition, and a long fed-batch phase at a low set growth rate. The late phase may touch the original fed-batch question: what limits feeding, and what happens beyond that limit.
+
 ## Low-sugar batch data search (2026-09-25): no suitable open dataset found
 
 - **What was looked for:** aerobic *S. cerevisiae* batches starting at about 1–10 g/L glucose, with dense early sampling, a known preculture, a defined medium, and openly available data. The search used Europe PMC open-access full-text queries.
