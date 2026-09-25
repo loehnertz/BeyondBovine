@@ -30,3 +30,37 @@ This is the outcome expected before the run.
 
 - The fermentative yield has not been changed in any model. Setting it from these same data and re-testing here would be circular.
 - **Candidate next step (not agreed):** calibrate an oxygen-present fermentative yield on Jouhten's oxygen-limited conditions, then test it on *other* data: Ji Figure 2 (does the round 1 gap close?) and the fed-batch.
+
+## Follow-up: an oxygen-present fermentative yield, with cross-dataset tests (`explorations/009_oxygen_present_yield.py`)
+
+**Agreed with Jakob.** One number was calibrated on Jouhten's oxygen-limited chemostats only: the cell yield of fermented sugar when oxygen is present. The 005 model was then re-calibrated on its usual data, Ji 40 g/L plus van Hoek, using that yield for aerobic overflow. It was then tested on other data.
+
+**Calibration.** The yield is **0.174 g cells per g**, compared with 0.10 without oxygen. The ethanol yield follows from the carbon balance: 0.403 g/g. Jouhten's 1.0 and 0.5 % conditions are now matched to within about 15 %. At 2.8 %, the model still predicts some ethanol (0.32) where almost none was measured (0.07–0.10).
+
+**Re-calibrated 005.**
+- The yeast-extract yield went to **0**: extra carbon from the medium is no longer needed to explain Ji's yields.
+- The low-affinity KS is 5.2 g/L, between the Hxt2/4 and Hxt1/3 ranges.
+- The repressed threshold is close to 0, and the derepressed threshold is 0.50 g/g/h.
+- The chemostat is still reproduced, with the onset of ethanol slightly early, at D ≈ 0.25–0.28.
+
+**Test: Ji Figure 2 (cells / ethanol, g/g).**
+
+| Starting glucose | 009 | 005 | Ji |
+|---|---|---|---|
+| 1 | 0.35 / 0.13 | 0.46 / 0.01 | 0.41 / 0.22 |
+| 5 | **0.25 / 0.28** | 0.31 / 0.19 | 0.26 / 0.285 |
+| 10 | **0.22 / 0.33** | 0.25 / 0.27 | 0.24 / 0.31 |
+| 25 | **0.20 / 0.37** | 0.19 / 0.34 | 0.215 / 0.365 |
+
+The compiled 8 g/L batch gives 0.23 / 0.31, against the data's 0.14 / 0.39; 005 gave 0.25 for ethanol.
+
+**Fed-batch.** Gas exchange from 25 to 98 h is unchanged and good. The transition at 15 h is worse (OUR 6.9 vs 0.9). Biomass is still about 30 % low in the middle of the run.
+
+## What was learned (the main lesson of the whole overflow thread)
+
+- **The step 5 low-sugar failure was mostly a mis-transferred parameter, not missing mechanism.** The fermentative yield came from *anaerobic* cells (Verduyn 1990), but Crabtree overflow happens in cells *with* oxygen. Three added mechanisms (rounds 3–5) could not fix it. One parameter, calibrated on an independent dataset about oxygen, fixed 5 and 10 g/L and most of 1 g/L.
+- **The round 1 carbon-balance puzzle is resolved without yeast extract.** Whether some yeast-extract carbon is used remains possible, but it is not needed.
+- **Caveats:**
+  - The yield comes from a lab strain (CEN.PK) and is applied to an industrial strain (AFY).
+  - 1 g/L remains under-predicted for ethanol, although the possible preculture carry-over applies there.
+  - The compiled 8 g/L batch remains off, but it has no identified source.

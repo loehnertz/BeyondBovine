@@ -261,6 +261,9 @@ The model as it stands is described in [model/batch-overflow.md](model/batch-ove
   - The test with nothing fitted confirmed the agent's pre-run expectation: the model is good when fully aerobic and fully anaerobic, and about 2× too much ethanol when oxygen-limited.
   - Lesson: fermenting while some oxygen is present yields more cells (implied 0.13–0.18 against 0.10). A plausible reason is the glycerol/redox cost that only applies without oxygen.
 
+- **Oxygen-present yield (009, 2026-09-25):** calibrated on Jouhten, 0.174 g/g against 0.10 anaerobic. The Ji test now matches at 5–25 g/L and the yeast extract is no longer needed.
+  - **Lesson:** the long low-sugar failure was mostly *one mis-transferred parameter*, an anaerobic yield used for aerobic overflow. It was not missing mechanism. Three mechanism additions failed where one better-sourced number succeeded.
+
 ## Parked questions
 
 - **Why is ethanol, specifically, the product when yeast ferments?** Jakob suspects a chemical logic and is right. It needs some groundwork on how sugar is broken down. (Raised 2026-09-24.)

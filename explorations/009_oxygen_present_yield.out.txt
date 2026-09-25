@@ -1,0 +1,46 @@
+Step 1, calibrated on Jouhten oxygen-limited chemostats: Y_RED_OX = 0.174 g/g, ethanol 0.403 g/g (anaerobic: 0.10 / 0.449)
+   20.9%  I  ethanol  0.00 vs  0.00   biomass  4.80 vs  5.17
+   20.9% II  ethanol  0.00 vs  0.00   biomass  4.80 vs  5.31
+    2.8%  I  ethanol  0.32 vs  0.07   biomass  4.32 vs  4.61
+    2.8% II  ethanol  0.32 vs  0.10   biomass  4.32 vs  4.86
+    1.0%  I  ethanol  1.82 vs  1.56   biomass  2.93 vs  3.22
+    1.0% II  ethanol  1.82 vs  2.00   biomass  2.93 vs  2.70
+    0.5%  I  ethanol  2.76 vs  2.59   biomass  2.44 vs  2.21
+    0.5% II  ethanol  2.76 vs  2.91   biomass  2.44 vs  2.08
+    0.0%  I  ethanol  9.75 vs  9.05   biomass  1.00 vs  1.03
+    0.0% II  ethanol  9.75 vs  9.47   biomass  1.00 vs  0.98
+
+Step 2, 005 re-calibrated on Ji 40 g/L + van Hoek with Y_RED_OX:
+  qs_max=3.111  qcrit_min=0.037  qcrit_max=0.497  k_rec=5.222  qe_max=0.146  y_xe=0.284  ks_low_aff=5.191  y_xye=0.000
+  chemostat (calibration) D: glucose / ethanol model vs data
+    0.025:  0.29 vs  0.30    0.00 vs  0.00
+    0.050:  0.58 vs  0.60    0.00 vs  0.00
+    0.100:  1.16 vs  1.10    0.00 vs  0.00
+    0.150:  1.73 vs  1.70    0.00 vs  0.00
+    0.200:  2.31 vs  2.30    0.00 vs  0.00
+    0.250:  3.05 vs  2.80    0.04 vs  0.00
+    0.280:  3.72 vs  3.40    0.31 vs  0.11
+    0.300:  4.36 vs  4.50    1.14 vs  2.30
+    0.350:  8.43 vs  8.60   10.69 vs  9.50
+    0.400: 10.92 vs 11.10   15.67 vs 13.90
+
+Step 3a, TEST Ji Fig. 2 (cells / ethanol, g/g): new model | 005 | Ji
+    1 g/L  0.35 / 0.13  |  0.46 / 0.01  |  0.41 / 0.22
+    5 g/L  0.25 / 0.28  |  0.31 / 0.19  |  0.26 / 0.28
+   10 g/L  0.22 / 0.33  |  0.25 / 0.27  |  0.24 / 0.31
+   25 g/L  0.20 / 0.37  |  0.19 / 0.34  |  0.21 / 0.36
+   40 g/L  0.19 / 0.38  |  0.18 / 0.37  |  0.20 / 0.40  (calibration level)
+  compiled 8 g/L batch: 0.23 / 0.31  |  005: 0.26 / 0.25  |  data 0.14 / 0.39
+
+Step 3b, TEST fed-batch (base case): OUR model vs data, biomass model vs data
+  t= 10 h  OUR    9.4 vs   13.9
+  t= 15 h  OUR    6.9 vs    0.9
+  t= 25 h  OUR    5.2 vs    4.5
+  t= 45 h  OUR   13.3 vs   12.7
+  t= 70 h  OUR   38.1 vs   52.2
+  t= 98 h  OUR   88.1 vs   84.7
+  t=  20.5 h  biomass   2.38 vs   3.50
+  t=  44.3 h  biomass   8.16 vs  11.59
+  t=  70.4 h  biomass  25.42 vs  36.73
+  t=  95.8 h  biomass  55.61 vs  64.54
+  t= 118.0 h  biomass  80.18 vs  82.19

@@ -2,7 +2,7 @@
 
 **Status:** exploratory. It is not the engine, and it is not validated for low starting sugar.
 
-**Reference implementation:** `explorations/005_state_dependent_uptake.py`.
+**Reference implementation:** `explorations/005_state_dependent_uptake.py`, with the fermentative yield replaced by the oxygen-present value and re-calibrated in `explorations/009_oxygen_present_yield.py`. The current parameter values are in `009_…out.txt`.
 
 **Last reviewed with Jakob:** 2026-09-25. Jakob agreed each mechanism step by step. The full history, including the failed variants, is in [the review](../reviews/2026-09-24-overflow-repression.md).
 
@@ -31,15 +31,17 @@ Aerobic *S. cerevisiae* growing on glucose in one perfectly mixed vessel. It cov
 3. **Overflow above a threshold.** Uptake up to the threshold qcrit(R) is respired, at a yield of 0.48 g cells per g glucose. Uptake above it goes to ethanol, at 0.45 g ethanol and 0.10 g cells per g glucose. The model does not claim *why* the threshold exists; see the competing explanations in `SOURCES.md`.
 4. **Repression and recovery.** R falls while glucose is high and recovers when it is low. The repression signal is g = S / (S + 0.5 g/L).
 5. **Ethanol use** needs derepressed machinery (R) and low glucose.
-6. **Yeast extract** is consumed alongside glucose, in the ratio of Ji's medium, and adds cells.
+6. **Yeast extract** is consumed alongside glucose, in the ratio of Ji's medium, and adds cells. Since 009 its calibrated yield is 0, so it no longer contributes.
+7. **Oxygen limit (008/009):** respiration is capped at the available oxygen, 2.31 mol O₂ per mol glucose from an electron balance. The rest is fermented with the oxygen-present yield.
 
 ## Parameters
 
 | Parameter | Value | Basis | Applicability | Status |
 |---|---|---|---|---|
 | Respiratory yield | 0.48 g/g | van Hoek 1998 chemostat | industrial baker's yeast, a different strain from Ji's | accepted |
-| Fermentative cell yield | 0.10 g/g | Verduyn 1990 | anaerobic lab strain; transfer to aerobic overflow is uncertain | accepted, exploratory |
-| Ethanol per fermented glucose | 0.45 g/g | stoichiometry minus biomass carbon | derivation | accepted |
+| Fermentative cell yield, oxygen present | 0.174 g/g | calibrated on Jouhten 2008 oxygen-limited chemostats (CEN.PK) | used for aerobic overflow and for oxygen limitation; the strain transfer to AFY is uncertain | accepted, exploratory |
+| Fermentative cell yield, no oxygen | 0.10 g/g | Verduyn 1990; consistent with Jouhten at 0 % O₂ | anaerobic only | accepted |
+| Ethanol per fermented glucose | 0.40 g/g with oxygen, 0.45 g/g without | carbon balance given the fermentative cell yield | derivation | accepted |
 | High-affinity KS | 0.27 g/L | Reifenberger 1997 (Hxt6/7) | single-transporter strains | accepted |
 | Low-affinity KS | 10.7 g/L | calibrated | falls in the Hxt1/3 range, 9–18 g/L | plausibility check passed |
 | Thresholds (repressed / derepressed) | 0.30 / 0.75 g/g/h | calibrated | chemostat onset reproduced | calibrated |
@@ -60,7 +62,11 @@ Aerobic *S. cerevisiae* growing on glucose in one perfectly mixed vessel. It cov
 - **Supported (qualitatively, within the tested range):**
   - Batch cultures starting at 10–40 g/L glucose: predicted glucose-phase yields are within about 0.02–0.05 g/g of Ji.
   - The respiratory-to-overflow transition in a chemostat, with onset near D ≈ 0.28–0.30 1/h.
-- **Not supported:** batch cultures starting at low sugar (1–8 g/L). The model makes too little ethanol there: at 5 g/L it gives 0.19 g/g against Ji's 0.285. Three mechanism additions did not fix this.
+- **Supported since 009:** Ji batches at 5–40 g/L, predicted within about 0.02 g/g, with the oxygen-present fermentative yield.
+- **Not supported:**
+  - batch cultures at about 1 g/L, where ethanol is under-predicted (0.13 vs 0.22)
+  - the compiled 8 g/L batch
+  - the feed-start transition in fed-batch
 - **Not represented at all:**
   - oxygen limitation and transfer
   - temperature and pH

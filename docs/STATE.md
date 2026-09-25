@@ -63,10 +63,13 @@ The organism is not yet formally chosen. Baker's yeast (*S. cerevisiae*) is the 
 
 ## Proposed next step
 
-Jakob reviews the cell-level oxygen limit (`explorations/008_oxygen_limited_cells.py`; [review](reviews/2026-09-25-oxygen-limited-cells.md)).
+Jakob reviews 009 ([review, follow-up section](reviews/2026-09-25-oxygen-limited-cells.md)).
 
-- Fully aerobic and fully anaerobic conditions are predicted well.
-- Oxygen-limited conditions are not: about 2× too much ethanol and too little biomass.
-- The implied fermentative yield when some oxygen is present is 0.13–0.18 g/g, against 0.10 without oxygen.
+- An oxygen-present fermentative yield, calibrated only on Jouhten, closes most of the step 5 low-sugar gap in Ji's test: 5, 10 and 25 g/L now match. The yeast-extract contribution is no longer needed.
+- The model description is updated.
 
-**Candidate next step (not agreed):** calibrate that yield on Jouhten, then test it on Ji Figure 2 and the fed-batch. After that, the vessel oxygen-supply part, which remains exploratory.
+**Remaining open items:**
+- Ji at 1 g/L (possible preculture carry-over)
+- the fed-batch feed-start transition, and biomass about 30 % low in the middle of the run
+
+**Next candidate (not agreed):** the vessel oxygen-supply part, as an exploratory what-if.
