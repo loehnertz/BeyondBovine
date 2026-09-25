@@ -144,6 +144,17 @@ These sources were read to decide how to represent overflow. Agents read the abs
   - The CO₂/O₂ ratio is mostly about 1.0–1.2 but reaches about 1.3 late. This could mean some fermentation, for example from oxygen limitation at very high cell density. Untested.
 - **Relevance:** it covers a batch phase, the feed-start transition, and a long fed-batch phase at a low set growth rate. The late phase may touch the original fed-batch question: what limits feeding, and what happens beyond that limit.
 
+## Jouhten et al. 2008: yeast metabolism at controlled oxygen shortage (found 2026-09-25)
+
+Jouhten P, Rintala E, Huuskonen A, Tamminen A, Toivari M, Wiebe M, Ruohonen L, Penttilä M, Maaheimo H. *Oxygen dependence of metabolic fluxes and energy generation of Saccharomyces cerevisiae CEN.PK113-1A.* BMC Systems Biology 2, 60 (2008). doi:[10.1186/1752-0509-2-60](https://doi.org/10.1186/1752-0509-2-60), [PMC2507709](https://pmc.ncbi.nlm.nih.gov/articles/PMC2507709/). Open access, CC BY.
+
+- **Setup:** glucose-limited chemostat, D = 0.10 1/h, 30 °C, pH 5. The inlet gas contains 20.9, 2.8, 1.0, 0.5 or 0 % O₂, with two cultures each.
+- **Measured (Table 1 and Table 3):** per-cell rates of glucose uptake, ethanol, glycerol and acetate production, oxygen uptake (2.7, 2.5, 1.7, 1.2 and 0 mmol/g/h), and biomass.
+- **Strain:** CEN.PK113-1A, the same CEN.PK family as the fed-batch strain.
+- **Why it matters:** it shows directly what cells do *beyond* an oxygen limit. As oxygen falls, respiration is restricted, ethanol rises and biomass falls. It needs no vessel parameters: the measured oxygen uptake can be imposed on the model as the limit.
+- **Also noted:** ethanol already appears at 2.8 % O₂ with only small flux changes.
+- **Status:** candidate **test** dataset for an oxygen limit in the cell model. Not yet used.
+
 ## Low-sugar batch data search (2026-09-25): no suitable open dataset found
 
 - **What was looked for:** aerobic *S. cerevisiae* batches starting at about 1–10 g/L glucose, with dense early sampling, a known preculture, a defined medium, and openly available data. The search used Europe PMC open-access full-text queries.
